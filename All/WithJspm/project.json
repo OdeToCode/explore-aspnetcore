@@ -6,7 +6,6 @@
     ],
     "packExclude": [
         "node_modules",
-        "jspm_packages",
         "bower_components",
         "**.kproj",
         "**.user",
