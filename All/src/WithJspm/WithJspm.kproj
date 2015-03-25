@@ -6,14 +6,22 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\AspNet\Microsoft.Web.AspNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>7a83f55e-0850-411c-ba49-e46818d7daef</ProjectGuid>
-    <RootNamespace>EmptyStart</RootNamespace>
+    <ProjectGuid>a4728ea2-1463-46c3-9ede-136669c296fe</ProjectGuid>
+    <RootNamespace>WithJspm</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">..\artifacts\bin\$(MSBuildProjectName)\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AssemblyName>WithJspm</AssemblyName>
+  </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <DevelopmentServerPort>1403</DevelopmentServerPort>
+    <DevelopmentServerPort>1440</DevelopmentServerPort>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\AspNet\Microsoft.Web.AspNet.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties project_1json__JSONSchema="http://www.asp.net/media/4878834/project.json" package_1json__JSONSchema="http://json.schemastore.org/package" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

@@ -12,7 +12,13 @@
         "**.vspscc"
     ],
     "dependencies": {
-        "Microsoft.AspNet.Server.IIS": "1.0.0-beta2"
+        "Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
+        "Microsoft.AspNet.Mvc": "6.0.0-beta3",
+        "CommandTool": ""
+    },
+    "commands": {
+        "tool": "CommandTool foo=bar duck=quack",
+        "me" : "EmptyStart foo=bar"
     },
     "frameworks" : {
         "aspnet50" : { },
