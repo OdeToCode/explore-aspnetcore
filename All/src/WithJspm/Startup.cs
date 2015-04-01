@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.StaticFiles;
 
 namespace WithJspm
 {

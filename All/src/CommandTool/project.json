@@ -1,16 +1,17 @@
 ﻿{
     "version": "1.0.0-*",
     "dependencies": {
+
     },
-    "commands": { 
-        "CommandTool" : "run"
+    "commands": {
+        "CommandTool": "run"
     },
-    "frameworks" : {
-        "aspnet50" : { },
-        "aspnetcore50" : { 
-            "dependencies": {
-                "System.Console": "4.0.0-beta-22523"
-            }
+    "frameworks": {
+        "dnx451": {
+            "frameworkAssemblies": {}
+        },
+        "dnxcore50": {
+            "frameworkAssemblies": { }
         }
     }
 }

@@ -1,0 +1,10 @@
+{
+  "locked": false,
+  "version": -9999,
+  "projectFileDependencyGroups": {
+    "": [],
+    "DNX,Version=v4.5.1": [],
+    "DNXCore,Version=v5.0": []
+  },
+  "libraries": {}
+}

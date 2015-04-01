@@ -12,16 +12,14 @@
         "**.vspscc"
     ],
     "dependencies": {
-        "Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
-        "Microsoft.AspNet.Mvc": "6.0.0-beta3",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
-        "CommandTool": ""
+        "Microsoft.AspNet.Loader.IIS": "1.0.0-beta4-11316",
+        "Microsoft.AspNet.Mvc": "6.0.0-beta4-13141"  
     },
     "commands": {
         "me" : "EmptyStart --message=Goodbye"
     },
     "frameworks": {
-        "aspnet50": { },
-        "aspnetcore50": { }
+        "dnx451": { },
+        "dnxcore50": { }
     }
 }
