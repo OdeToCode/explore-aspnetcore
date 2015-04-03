@@ -4,7 +4,8 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.AspNet.Loader.IIS >= 1.0.0-beta4-11316",
-      "Microsoft.AspNet.Mvc >= 6.0.0-beta4-13141"
+      "Microsoft.AspNet.Mvc >= 6.0.0-beta4-13141",
+      "Microsoft.Framework.ConfigurationModel.Json >= 1.0.0-beta4-11001"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []
@@ -1780,6 +1781,53 @@
         "lib/net45/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
         "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
         "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4-11001": {
+      "sha": "V5rmWhIffP3AGguMkMmsrdsVpXLOqWvzPYyk5n/N7zGC+Wf6xL0LXQdEcEvciZXFKMRGGedQq82IVOBr+SjAtQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Newtonsoft.Json": "6.0.6",
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-11001"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ]
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {
+            "Newtonsoft.Json": "6.0.6",
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-11001"
+          },
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-11001.nupkg",
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-11001.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.Json.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.xml"
       ]
     },
     "Microsoft.Framework.DependencyInjection/1.0.0-beta4-11037": {

@@ -4,14 +4,16 @@
 
     },
     "commands": {
-        "CommandTool": "run"
+
     },
     "frameworks": {
         "dnx451": {
-            "frameworkAssemblies": {}
         },
         "dnxcore50": {
-            "frameworkAssemblies": { }
+            "dependencies": {
+                 "System.Console": "4.0.0-beta-22716"
+            }
+
         }
     }
 }
