@@ -4,6 +4,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.AspNet.Loader.IIS >= 1.0.0-beta4-11316",
+      "Microsoft.AspNet.Loader.IIS.Interop >= 1.0.0-beta4-11316",
       "Microsoft.AspNet.Mvc >= 6.0.0-beta4-13141",
       "Microsoft.Framework.ConfigurationModel.Json >= 1.0.0-beta4-11001",
       "Microsoft.Azure.DocumentDB >= 1.0.0",
@@ -542,6 +543,31 @@
         "lib/dnx451/Microsoft.AspNet.Loader.IIS.xml",
         "lib/dnxcore50/Microsoft.AspNet.Loader.IIS.dll",
         "lib/dnxcore50/Microsoft.AspNet.Loader.IIS.xml"
+      ]
+    },
+    "Microsoft.AspNet.Loader.IIS.Interop/1.0.0-beta4-11316": {
+      "sha": "KRRC/UxFSa2ds52lWVf0ts8TCsgPx9rk3n91H9zwByOJ7qsZa2R8HOnlnzSpL1zi6msp0YhaAHU4MtgmRRnzTQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        },
+        "DNXCore,Version=v5.0": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [],
+          "compileAssemblies": []
+        }
+      },
+      "files": [
+        "Microsoft.AspNet.Loader.IIS.Interop.1.0.0-beta4-11316.nupkg",
+        "Microsoft.AspNet.Loader.IIS.Interop.1.0.0-beta4-11316.nupkg.sha512",
+        "Microsoft.AspNet.Loader.IIS.Interop.nuspec",
+        "InteropAssemblies/amd64/Microsoft.AspNet.Loader.IIS.Interop.dll",
+        "InteropAssemblies/x86/Microsoft.AspNet.Loader.IIS.Interop.dll",
+        "tools/AspNet.Loader.dll"
       ]
     },
     "Microsoft.AspNet.Mvc/6.0.0-beta4-13141": {
