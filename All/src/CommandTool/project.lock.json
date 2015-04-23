@@ -2,208 +2,202 @@
   "locked": false,
   "version": -9999,
   "projectFileDependencyGroups": {
-    "": [],
-    "DNX,Version=v4.5.1": [],
-    "DNXCore,Version=v5.0": [
-      "System.Console >= 4.0.0-beta-22716"
-    ]
+    "": [
+      "Microsoft.Azure.DocumentDB >= 1.0.0",
+      "Microsoft.Framework.ConfigurationModel.Json >= 1.0.0-beta4-11001"
+    ],
+    "DNX,Version=v4.5.1": []
   },
   "libraries": {
-    "System.Console/4.0.0-beta-22716": {
-      "sha": "PxVcqGIQyeiXprFvMi65q/X3ij17UBT+7Sftj+/m6RwD8S0+CNi872GhCmJpQCnzZnsyA80tZA2/6FLCsDXrZQ==",
+    "Microsoft.Azure.DocumentDB/1.0.0": {
+      "sha": "ztSRPJbla+xUNb/wbFce0NsvB65mEgdLCCGPX77VzoDJrA9+K6RepTpo1TrIvAJFczPhCUWCELbKMZZRuBJzUg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {
-            "System.IO": "4.0.0-beta-22716",
-            "System.Runtime": "4.0.0-beta-22716"
+            "Newtonsoft.Json": "4.5.11"
           },
           "frameworkAssemblies": [],
           "runtimeAssemblies": [
-            "lib/net45/System.Console.dll"
+            "lib/net40/Microsoft.Azure.Documents.Client.dll"
           ],
           "compileAssemblies": [
-            "lib/net45/System.Console.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {
-            "System.IO": "4.0.0-beta-22716",
-            "System.Runtime": "4.0.0-beta-22716"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/aspnetcore50/System.Console.dll"
-          ],
-          "compileAssemblies": [
-            "lib/contract/System.Console.dll"
+            "lib/net40/Microsoft.Azure.Documents.Client.dll"
           ]
         }
       },
       "files": [
-        "License.rtf",
-        "System.Console.4.0.0-beta-22716.nupkg",
-        "System.Console.4.0.0-beta-22716.nupkg.sha512",
-        "System.Console.nuspec",
-        "lib/aspnetcore50/System.Console.dll",
-        "lib/contract/System.Console.dll",
-        "lib/net45/System.Console.dll",
-        "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Console.dll"
+        "Microsoft.Azure.DocumentDB.1.0.0.nupkg",
+        "Microsoft.Azure.DocumentDB.1.0.0.nupkg.sha512",
+        "Microsoft.Azure.DocumentDB.nuspec",
+        "lib/net40/Microsoft.Azure.Documents.Client.dll",
+        "lib/net40/Microsoft.Azure.Documents.Client.XML"
       ]
     },
-    "System.IO/4.0.10-beta-22716": {
-      "sha": "Db4hiHrtOwdv9r8aaV3YYQjWpaNLQhLxLLti3Pe8l/HR+B3ZtUNed53lefa+xJmrHg439eED4ZeV1mp10aySpg==",
+    "Microsoft.Framework.ConfigurationModel/1.0.0-beta4-11001": {
+      "sha": "IgCzfP/FnzGVUM7Vor93wYjwCnJZv2p3/tC+DLREJ1Htzg614IujiU16pAo7ukuBIBxkwR5vDCBtUwYouo99nA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {
-            "System.Runtime": "4.0.20-beta-22716",
-            "System.Text.Encoding": "4.0.0-beta-22716",
-            "System.Threading.Tasks": "4.0.0-beta-22716"
+            "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-11001",
+            "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4-11296"
           },
-          "frameworkAssemblies": [],
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
           "runtimeAssemblies": [
-            "lib/net45/System.IO.dll"
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll"
           ],
           "compileAssemblies": [
-            "lib/net45/System.IO.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {
-            "System.Runtime": "4.0.20-beta-22716",
-            "System.Text.Encoding": "4.0.0-beta-22716",
-            "System.Threading.Tasks": "4.0.0-beta-22716"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/aspnetcore50/System.IO.dll"
-          ],
-          "compileAssemblies": [
-            "lib/contract/System.IO.dll"
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll"
           ]
         }
       },
       "files": [
-        "License.rtf",
-        "System.IO.4.0.10-beta-22716.nupkg",
-        "System.IO.4.0.10-beta-22716.nupkg.sha512",
-        "System.IO.nuspec",
-        "lib/aspnetcore50/System.IO.dll",
-        "lib/contract/System.IO.dll",
-        "lib/net45/System.IO.dll",
-        "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.IO.dll"
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4-11001.nupkg",
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4-11001.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.xml"
       ]
     },
-    "System.Runtime/4.0.20-beta-22716": {
-      "sha": "r5zVD6TUv9mLxi+0KMEbhFqfIQ6gtHxp2wRfGhFAtxjVFXA2QI/N2EcfwvIob3BEnBb5I6YFzYi0FK6mJPQI6g==",
+    "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4-11001": {
+      "sha": "yrD+V/Ny6TjT6HLMIsq6I52ftnVJPE4NOxKMI+glrOez2q1i4Tad9QZvGwjgwLwDgSvaQAH06S+lzvDRQwju5w==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4-11001.nupkg",
+        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4-11001.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Interfaces.xml",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.dll",
+        "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.xml"
+      ]
+    },
+    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4-11001": {
+      "sha": "V5rmWhIffP3AGguMkMmsrdsVpXLOqWvzPYyk5n/N7zGC+Wf6xL0LXQdEcEvciZXFKMRGGedQq82IVOBr+SjAtQ==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {
+            "Newtonsoft.Json": "6.0.6",
+            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-11001"
+          },
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-11001.nupkg",
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-11001.nupkg.sha512",
+        "Microsoft.Framework.ConfigurationModel.Json.nuspec",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.xml",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll",
+        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.xml"
+      ]
+    },
+    "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4-11296": {
+      "sha": "37QC68cr+LJFJc73eO7KVNTVazd5BL2/Froxqi40NWccSwjoxuOZLlhNdsZo7HORBdvr9tmxohQnmMiEIJSizg==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [
+            "mscorlib",
+            "System",
+            "System.Core",
+            "Microsoft.CSharp"
+          ],
+          "runtimeAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll"
+          ],
+          "compileAssemblies": [
+            "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll"
+          ]
+        }
+      },
+      "files": [
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11296.nupkg",
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11296.nupkg.sha512",
+        "Microsoft.Framework.Runtime.Interfaces.nuspec",
+        "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll",
+        "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.xml",
+        "lib/dnxcore50/Microsoft.Framework.Runtime.Interfaces.dll",
+        "lib/dnxcore50/Microsoft.Framework.Runtime.Interfaces.xml"
+      ]
+    },
+    "Newtonsoft.Json/6.0.6": {
+      "sha": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
           "dependencies": {},
           "frameworkAssemblies": [],
           "runtimeAssemblies": [
-            "lib/net45/System.Runtime.dll"
+            "lib/net45/Newtonsoft.Json.dll"
           ],
           "compileAssemblies": [
-            "lib/net45/System.Runtime.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {},
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/aspnetcore50/System.Runtime.dll"
-          ],
-          "compileAssemblies": [
-            "lib/contract/System.Runtime.dll"
+            "lib/net45/Newtonsoft.Json.dll"
           ]
         }
       },
       "files": [
-        "License.rtf",
-        "System.Runtime.4.0.20-beta-22716.nupkg",
-        "System.Runtime.4.0.20-beta-22716.nupkg.sha512",
-        "System.Runtime.nuspec",
-        "lib/aspnetcore50/System.Runtime.dll",
-        "lib/contract/System.Runtime.dll",
-        "lib/net45/System.Runtime.dll",
-        "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Runtime.dll"
-      ]
-    },
-    "System.Text.Encoding/4.0.10-beta-22716": {
-      "sha": "hIm6t9oJU+dADByvFmvlp/w9vefj7tZrjHfgng8GJwYaLOhq4Dkn5/6wGyltc/MQqQ4AjzAj3VGnXHS82QrBXQ==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {
-            "System.Runtime": "4.0.0-beta-22716"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/net45/System.Text.Encoding.dll"
-          ],
-          "compileAssemblies": [
-            "lib/net45/System.Text.Encoding.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {
-            "System.Runtime": "4.0.0-beta-22716"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/aspnetcore50/System.Text.Encoding.dll"
-          ],
-          "compileAssemblies": [
-            "lib/contract/System.Text.Encoding.dll"
-          ]
-        }
-      },
-      "files": [
-        "License.rtf",
-        "System.Text.Encoding.4.0.10-beta-22716.nupkg",
-        "System.Text.Encoding.4.0.10-beta-22716.nupkg.sha512",
-        "System.Text.Encoding.nuspec",
-        "lib/aspnetcore50/System.Text.Encoding.dll",
-        "lib/contract/System.Text.Encoding.dll",
-        "lib/net45/System.Text.Encoding.dll",
-        "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Text.Encoding.dll"
-      ]
-    },
-    "System.Threading.Tasks/4.0.10-beta-22716": {
-      "sha": "u/gSnwlx0vWvrSfL8vupT/Ds4ILDBpk9BIg7vPRQpTp3hpy1x2uo4TNafp1YooOEaGw4j0qDB8Cha1NfCRxPLw==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {
-            "System.Runtime": "4.0.0-beta-22716"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/net45/System.Threading.Tasks.dll"
-          ],
-          "compileAssemblies": [
-            "lib/net45/System.Threading.Tasks.dll"
-          ]
-        },
-        "DNXCore,Version=v5.0": {
-          "dependencies": {
-            "System.Runtime": "4.0.0-beta-22716"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/aspnetcore50/System.Threading.Tasks.dll"
-          ],
-          "compileAssemblies": [
-            "lib/contract/System.Threading.Tasks.dll"
-          ]
-        }
-      },
-      "files": [
-        "License.rtf",
-        "System.Threading.Tasks.4.0.10-beta-22716.nupkg",
-        "System.Threading.Tasks.4.0.10-beta-22716.nupkg.sha512",
-        "System.Threading.Tasks.nuspec",
-        "lib/aspnetcore50/System.Threading.Tasks.dll",
-        "lib/contract/System.Threading.Tasks.dll",
-        "lib/net45/System.Threading.Tasks.dll",
-        "lib/portable-wpa81+wp80+win80+net45+aspnetcore50/System.Threading.Tasks.dll"
+        "Newtonsoft.Json.6.0.6.nupkg",
+        "Newtonsoft.Json.6.0.6.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netcore45/Newtonsoft.Json.dll",
+        "lib/netcore45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.xml",
+        "tools/install.ps1"
       ]
     }
   }
