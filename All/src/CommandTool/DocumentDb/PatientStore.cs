@@ -1,10 +1,12 @@
 ﻿using System;
 using Microsoft.Azure.Documents.Client;
+using Microsoft.Azure.Documents.Linq;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Azure.Documents;
 using System.Threading.Tasks;
 using CommandTool.DocumentDb;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace CommandTool
 {
@@ -31,18 +33,26 @@ namespace CommandTool
         public async Task<DocumentCollection> Setup()
         {
             Console.WriteLine("Steup");
-            var db = new Database() { Id = "PatientDb" };
-            var collection = new DocumentCollection { Id = "Patients" };
 
-            _database = await _client.ReadDatabaseAsync(db.SelfLink);
+            var databaseId = "PatientDb";
+            var collectionId = "Patients";
+
+            _database = _client.CreateDatabaseQuery()
+                               .Where(d => d.Id == databaseId)
+                               .AsEnumerable()
+                               .FirstOrDefault();         
             if (_database == null)
             {
-                _database = await _client.CreateDatabaseAsync(new Database { Id = "PatientDb" });
+                _database = await _client.CreateDatabaseAsync(new Database { Id = databaseId });
             }
-            _collection = await _client.ReadDocumentCollectionAsync(_database.CollectionsLink);
+   
+            _collection = _client.CreateDocumentCollectionQuery(_database.CollectionsLink)
+                                 .Where(c => c.Id == collectionId)
+                                 .AsEnumerable()
+                                 .FirstOrDefault();           
             if (_collection == null)
             {
-                _collection = await _client.CreateDocumentCollectionAsync(_database.CollectionsLink, collection);
+                _collection = await _client.CreateDocumentCollectionAsync(_database.CollectionsLink, new DocumentCollection { Id = collectionId } );
             }
 
             Console.WriteLine("Setup complete");
