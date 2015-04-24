@@ -2,7 +2,7 @@
     "version": "1.0.0-*",
     "dependencies": {
         "Microsoft.Azure.DocumentDB": "1.0.0",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4-11001"
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4"
     },
     "commands": {
         "me": "CommandTool"
