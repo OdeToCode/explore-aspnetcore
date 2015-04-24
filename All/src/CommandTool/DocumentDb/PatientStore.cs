@@ -32,8 +32,6 @@ namespace CommandTool
 
         public async Task<DocumentCollection> Setup()
         {
-            Console.WriteLine("Steup");
-
             var databaseId = "PatientDb";
             var collectionId = "Patients";
 
@@ -55,9 +53,7 @@ namespace CommandTool
                 _collection = await _client.CreateDocumentCollectionAsync(_database.CollectionsLink, new DocumentCollection { Id = collectionId } );
             }
 
-            Console.WriteLine("Setup complete");
             return _collection;
-
         }
 
         public async Task<Database> TearDown()
