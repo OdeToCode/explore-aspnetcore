@@ -31,9 +31,19 @@ namespace CommandTool
             }
         }
 
-        private Task<bool> DocSerializtionExperiment()
+        private async Task<bool> DocSerializtionExperiment()
         {
-            return Task.FromResult(true);
+            var store = new PatientStore(Configuration);
+            await store.Setup();
+
+            var patient = new Patient();
+            patient.Name = "Scott";
+            patient.Medications = null;
+
+            await store.Save(patient);
+
+            //await store.TearDown();
+            return true;
         }
 
         private async Task<bool> DocSizeExperiment()
