@@ -1,6 +1,6 @@
 {
   "locked": false,
-  "version": -9998,
+  "version": -9999,
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.AspNet.Loader.IIS >= 1.0.0-beta4",
@@ -14,7 +14,6 @@
   },
   "libraries": {
     "Microsoft.AspNet.Authentication/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "bF++RlseLYrzDjtzrwNsLlftnj65Gctg6AkW6QMmk3W5EcNCktynbfjZrAn/1JRr7jri5XAJ546kvoayYKMjEg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -50,7 +49,6 @@
       ]
     },
     "Microsoft.AspNet.Authorization/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "3Nf8ksZ7jSJgN/0t8dfsI7EogSFr5pa6NUNdYSfvoo52Jl9c4XTdgH2mDugHNRXXrouZAu8jcrsH0P8iMn1baQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -84,7 +82,6 @@
       ]
     },
     "Microsoft.AspNet.Cors/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "Zc6ED9sNTjbExEtJ59ajR5VAzKnvZ2Bg31QgSo9nmVOZwrEVgdQJjL+m4mW3cZbZuU1KWcpaTtML6dY8co72sA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -118,7 +115,6 @@
       ]
     },
     "Microsoft.AspNet.Cors.Core/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "4F0WoPwU3vasJj9RZErDGXde0mBtXj4zMe3UmQTjP3QTTSpelIV+cilrr2CnFB26CjRj17aHUeWbEYO19GUg0w==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -153,7 +149,6 @@
       ]
     },
     "Microsoft.AspNet.Cryptography.Internal/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "ytSNFgyvBp0pyTDWy4Iq5y0xM8GU5tGG/gxaTbfR38qqnO4ZRKtgB8z6+1F+NCzFQNIdlvz9+qguS7aXH+gtbQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -185,7 +180,6 @@
       ]
     },
     "Microsoft.AspNet.DataProtection/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "HqfH0h9i81OuOTO7CTWVwmkJoUM1Fc9AuxQASywZmCww4WLZ3qHZMeKZxeeBZdERksc3PH2EGIqis1i6dyXfmw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -226,7 +220,6 @@
       ]
     },
     "Microsoft.AspNet.DataProtection.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "y0pyHIooDn15lJZEETy9+u9ynw+4ZRngRjHguIQuBKm30j1+dwQRqqyS6L1SnFCzAS0mq6+5GauzA8qWxHc60g==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -260,7 +253,6 @@
       ]
     },
     "Microsoft.AspNet.Diagnostics.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "25/Rs8HIc+Za9lQcDx2dTw5DffY1y2SvKaPLGJcNufJX0/prnJi0psdEagPbqVBJppRxbFZc3u8MdUILzHJqsA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -290,7 +282,6 @@
       ]
     },
     "Microsoft.AspNet.FeatureModel/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "Xewac6SajTjfxmPKZSSYWLsRu/ZI/hqx775ozDjHsSIl2xsl2bq6ZJu6PCIoEj16+Ws/Gl+cfbdNrhCa5LslHQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -320,7 +311,6 @@
       ]
     },
     "Microsoft.AspNet.FileProviders/1.0.0-beta4": {
-      "serviceable": false,
       "sha": "4/1d/nfCWZPZg9pod618gHGgPZTtDF3ol81NgAsY7i6G3K3gKNX0yekvhUG0LDR7J7p4eamFDb8oZC8E0OnFFg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -354,7 +344,6 @@
       ]
     },
     "Microsoft.AspNet.FileProviders.Interfaces/1.0.0-beta4": {
-      "serviceable": false,
       "sha": "nB1GlK79h0x/hEm7ro/TiRK58kv4VukyqSuAtMQGp7S8xkat9uPJJQFQh1MUysCU/gJlbK+5+PIq9srM3RS6Sw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -388,7 +377,6 @@
       ]
     },
     "Microsoft.AspNet.Hosting/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "2rElL/y+eqvmUre+gVjruvslfTbhhe8o5wyUo/qicCr/UnL9GrDGi4ikIV9ulS9tqiRTTByUT+CGC1TnSeiCnw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -427,7 +415,6 @@
       ]
     },
     "Microsoft.AspNet.Hosting.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "+0M9gAQ9rPnsWu4saQ4ZkC6yjwahEiiXM/XoA1PEO7wsZcuQ/yX7Oo794k+bn/HyzstDcyRV4UDc8nUwTuBFqg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -462,7 +449,6 @@
       ]
     },
     "Microsoft.AspNet.Http/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "XTs0bSEcxRP74nSZ8SFCLfcswV1CzwpNWbQDhKOmOFdJXP56sJtF6cDJBcvV/emUha75gz9zXRZErHVFH45MAg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -494,7 +480,6 @@
       ]
     },
     "Microsoft.AspNet.Http.Core/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "U6jZxua+mNfNTjm9lW/1W4sKd1aYUWiTp7KBY7hPs49IU4p7NMewvDKV34/svcaDYDOqhtuduyGJCdw62GrvqQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -531,7 +516,6 @@
       ]
     },
     "Microsoft.AspNet.Http.Extensions/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "nhcRbawpD6g8ZiEfF/KE4N+VnrrPyosDqWqNzJQWZDAto/ntenbve6iNgRRuwatvczdlskwsdasmrHKw92ciWQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -567,7 +551,6 @@
       ]
     },
     "Microsoft.AspNet.Http.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "31C78ja91ggo1ywLn83yNpTR0pnhMbPMcKhE72Gx3I5M0F1foDJQTHBOBFS0ebGkn8eiDMWkKGqjYucslaiu5Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -597,7 +580,6 @@
       ]
     },
     "Microsoft.AspNet.JsonPatch/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "osQ1Bsui45jlsUwMLEkQkEB2VBIFEc4Rn/Un3cUaDUXpCXU/F+xt9qyxGrC8NMHGxnoMCyltSZNNitGo1eDyLg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -630,7 +612,6 @@
       ]
     },
     "Microsoft.AspNet.Loader.IIS/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "yuhp/0exkFrwOBLAhX29lXoA1D+ouoq/TZ8aeRNcVILqwJ5hTU6Gf5muGQVGK/PqRQKQDUaHTzRLx/TrhWa91A==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -665,7 +646,6 @@
       ]
     },
     "Microsoft.AspNet.Loader.IIS.Interop/1.0.0-beta4": {
-      "serviceable": false,
       "sha": "50FEL0+abeAABvCoPs1A0Vcl65PyBKyzg06aL0H+Y+WZMoLI+Bvd1M9WKDj8nfm6K5Jh033oI7fQbOfscd8wqw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -685,7 +665,6 @@
       ]
     },
     "Microsoft.AspNet.Mvc/6.0.0-beta4": {
-      "serviceable": true,
       "sha": "zff+4iCo+KYQo7RGa4fDXyi/xDQFW4CssRYqEiBjX26XWB3tNDSYBY5pETZ3aUina9ocR++09Yun8wsRpL37DA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -720,7 +699,6 @@
       ]
     },
     "Microsoft.AspNet.Mvc.Core/6.0.0-beta4": {
-      "serviceable": true,
       "sha": "fWm2n86dAR/oYcKE7RWT3gr9xQjpLPlwZyxEN8vBBUqLYkTzW9iPXNyckgNycpdFFpOqRX4alfK1XKhQZxvSTw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -764,7 +742,6 @@
       ]
     },
     "Microsoft.AspNet.Mvc.ModelBinding/6.0.0-beta4": {
-      "serviceable": true,
       "sha": "diZfvlLlUsilyG6DL4wmKfWNjNvnwB1C14KxLfrVRhGi3HBXnd1bV4lFwEYFMHFvblCe77Pv6PKschmTr33TqA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -802,7 +779,6 @@
       ]
     },
     "Microsoft.AspNet.Mvc.Razor/6.0.0-beta4": {
-      "serviceable": true,
       "sha": "zB21KW/wbvV1fAJuceZDikyC1mqfebLciF89969xY/6rUs4EhfSMcMfarRGnEgX7oJecQVWRFlh2QCk5EmCFPw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -844,7 +820,6 @@
       ]
     },
     "Microsoft.AspNet.Mvc.Razor.Host/6.0.0-beta4": {
-      "serviceable": true,
       "sha": "yPWG0jyetebIc53Ytbsd3UXkwMsqig4TBcVMciW0B1UlLjJbdbnEVook9YrubEVJqxYf3sq6AxCcLQB/e0qyBg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -881,7 +856,6 @@
       ]
     },
     "Microsoft.AspNet.PageExecutionInstrumentation.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "rKcHwgcdJlYxum4ZDc3BktlXEjCEDimBM4YThJ78a5VxnZDLMxwublkaq6ekHPwg5SSMuzNcFQnb+5u1KAF/Jg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -911,7 +885,6 @@
       ]
     },
     "Microsoft.AspNet.Razor/4.0.0-beta4": {
-      "serviceable": true,
       "sha": "Q2+cwhdUOc3i0EJ/A//cbF2zmkvmC5WSMQhNHWpwASBECGI4oB10dzA+CazpsITOnwqlFlSgLsbpqlktvFGK7Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -943,7 +916,6 @@
       ]
     },
     "Microsoft.AspNet.Razor.Runtime/4.0.0-beta4": {
-      "serviceable": true,
       "sha": "7Cjl+l274C1jqwvqVWxYoJ2rsqvxvDmv2kBAeoYC/kYEjLi7exi/Baie39sngstlYWNBiA2nJZtnmv/5tUhDtA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -977,7 +949,6 @@
       ]
     },
     "Microsoft.AspNet.Routing/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "h2/S9nkGmSQT/gYZEzfCagdg66jLyZEV7m9j84sZ9teXOvUfynxg7Hcp+wk5kDwPyAwFuk+31/ya2oWwRD3RuA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1011,7 +982,6 @@
       ]
     },
     "Microsoft.AspNet.WebUtilities/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "EZJruvBXvVN78gAuL1Ei8HSgBfS9HvU/CiE4MjicXwdzHwyv+HZAvReDmGeWa+UaIW8kmmM4LzNAE8uEBjeQXA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1043,7 +1013,6 @@
       ]
     },
     "Microsoft.Azure.DocumentDB/1.0.0": {
-      "serviceable": false,
       "sha": "ztSRPJbla+xUNb/wbFce0NsvB65mEgdLCCGPX77VzoDJrA9+K6RepTpo1TrIvAJFczPhCUWCELbKMZZRuBJzUg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1068,7 +1037,6 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.0.0-rc2": {
-      "serviceable": false,
       "sha": "/4Z5es8TXCEn5sfzWz2uhUITmikgCfMAhehMJPQcSD2FRp2ooLTczDq3p4KOl+bcnsvaAu0aKrmdRgOvkrcwhw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1094,7 +1062,6 @@
       ]
     },
     "Microsoft.CodeAnalysis.Common/1.0.0-rc2": {
-      "serviceable": false,
       "sha": "7ALXqeJxiEMgnSST2qlWMThc5CIhJNFsUKYITIXXXj7gf8mF+ktEuKgUE7NWePzUgi0gq/2WmBX/4yWJuF1j6w==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1128,7 +1095,6 @@
       ]
     },
     "Microsoft.CodeAnalysis.CSharp/1.0.0-rc2": {
-      "serviceable": false,
       "sha": "wsj0BdWRY+fsUINMEQ+uanN0pWMAMj2z0UiJKjwoUo/Xbrk7PqGklzpOB7lvlESHjO8+Eaw71PQnml6j7m7rdQ==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1160,7 +1126,6 @@
       ]
     },
     "Microsoft.Framework.Caching.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "46cDLfehLNidWL55zPvLOinR/G3Z/hPtr6memnVenrt2BNPWmqujeXQaMyfklsYblxzeMhoE1ZhYsNuQdvj8zg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1192,7 +1157,6 @@
       ]
     },
     "Microsoft.Framework.Caching.Memory/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "fRruSHyvGTRaHNe6CmYRxIzcRdR/IEv3BkNpyk15IDxcJp3HrghwTa3hRjpOjd42oSOswaYzlrF/6XbARCH/6A==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1227,7 +1191,6 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "VD5MhmQRhYVfxyDs1fyruPTj3pYwLMV5dXJkPUVg1KKbJ9qr/tEn3frJA1NN1jdeVBt1RrW5FXr+wWG9YoO9Yg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1264,7 +1227,6 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "lU9+gyEz+jSeR+QsZxZtDf0U2DS/pl3I8/m7YeKjHMnjqoxUKFbSOpzegll7bhq0Alw7/8gF2Byrcy+PlzRc/g==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1298,7 +1260,6 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "ygdShf5lzRsqe7/pMNSaiq6AcAy0eIhp8WFUtYfqQnsxhMJFcw/VlIFvie8+DkYhacdmGkXTF4OGopjjwfg02A==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1333,7 +1294,6 @@
       ]
     },
     "Microsoft.Framework.DependencyInjection/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "PVzGSHq2lgQE4/Bje+lL7UNcj/ADVimsuAA10ACtA3qcLk0DkhgrXJsSMRyFBAv2vqvDXFTE2cLKHcsckWbSQw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1370,7 +1330,6 @@
       ]
     },
     "Microsoft.Framework.DependencyInjection.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "qbBGymgVdlrJZhJFg+35JaA0Tp8DYeFrDwv1Q3Di9hRWLZ3rAE7bvsnP+fmuo0XGlZDVXfGjINvtryFPyoQ58g==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1404,7 +1363,6 @@
       ]
     },
     "Microsoft.Framework.Logging/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "aFlG7h0WMJn+TgKIqoDkXh6LOquu7e6HKCOSrLvAaOp93qOWycz0kNQ0oGXVHYP6QebAjHgz9UffcqeCqeWN1Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1442,7 +1400,6 @@
       ]
     },
     "Microsoft.Framework.Logging.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "OK8v8gpDYfH01Gy1tvT4mS1r6ZWMAz1HXo872v7pswishE6oyTQwC44BpYM+Obq8GW7E6Ai/Vj3wE/CuLUDJGA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1476,7 +1433,6 @@
       ]
     },
     "Microsoft.Framework.OptionsModel/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "xjr084yTcmBLI8F3gb+hIEhf+ttanmbCWl54GkMhSH/dU1bqbR2Ts6Ks51kwUaACfNEDNY9zRwblT4of51lA6w==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1513,7 +1469,6 @@
       ]
     },
     "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "RrZdqvUm8QbgxnZQuafYGo6NezoKx7VqAfAtHVzoKBm3GSV8xlPh90u1fsGhNCv37xJNk5PuRCa4Mq27ko7pLw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1543,7 +1498,6 @@
       ]
     },
     "Microsoft.Framework.Runtime.Roslyn.Common/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "Zls0mzoTJEt7PoM/MB2gDaVs6bdYPrhr4Hp+pp68gy7rEIcF7kubCjXiCz7uf8WCMie48qUpT/8wUSUdOsTAww==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1577,7 +1531,6 @@
       ]
     },
     "Microsoft.Framework.Runtime.Roslyn.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "iZNGlqBAWIT2zWI1Z4AWpx9loBvplEgyHp3lRfBJX30npClf9d3fMRRlO1K9wx9ho0tMLBU8CSXpUc/21Knm6Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1610,7 +1563,6 @@
       ]
     },
     "Microsoft.Framework.WebEncoders/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "DCRv9DtaZB46YXhq4hRHCVsnGN9ESZgTQTaHNJNy+g04nFe2YpB65CPBavtmtF9xNR31jQoVamBJtduNrc9Jhw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1646,7 +1598,6 @@
       ]
     },
     "Microsoft.Framework.WebEncoders.Core/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "pJqTs8EUFMcQmkEVYKZiN0hDk5IpHHVasesEa/hgD99a+uENKc7oSOnKbJ+PypatsBTkj/IzuxybJUCKlBLiew==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1678,7 +1629,6 @@
       ]
     },
     "Microsoft.Net.Http.Headers/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "dhN5q9MbljcAqWTv1GIpeAzB8HB7l9YTrN+zl/KXUj8OP4cTd2LZ7qeZ0tqDHkxOD+GyZwi/SnbqztKSjTnVOg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1710,7 +1660,6 @@
       ]
     },
     "Newtonsoft.Json/6.0.6": {
-      "serviceable": false,
       "sha": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1746,7 +1695,6 @@
       ]
     },
     "System.Collections.Immutable/1.1.33-beta": {
-      "serviceable": true,
       "sha": "Qnv6M/BRf0w1xNoD5tH7V+jK0kdO+OZymwQS5Lj6FALt3AZMGVeJs+lHXi1PsKFll67UtGY+I7r8WDhRzspXCA==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -1770,7 +1718,6 @@
       ]
     },
     "System.Reflection.Metadata/1.0.18-beta": {
-      "serviceable": true,
       "sha": "4PtC2U6seQthZMvXvGTxXZUqlF0oV9jzYNTkG0Yo/D6cLO5AH3lrxh2djGyKsDYnAZjBCoyA/z3vHRCeaBEp4w==",
       "frameworks": {
         "DNX,Version=v4.5.1": {

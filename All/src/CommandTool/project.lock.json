@@ -1,6 +1,6 @@
 {
   "locked": false,
-  "version": -9998,
+  "version": -9999,
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.Azure.DocumentDB >= 1.0.0",
@@ -10,7 +10,6 @@
   },
   "libraries": {
     "Microsoft.Azure.DocumentDB/1.0.0": {
-      "serviceable": false,
       "sha": "ztSRPJbla+xUNb/wbFce0NsvB65mEgdLCCGPX77VzoDJrA9+K6RepTpo1TrIvAJFczPhCUWCELbKMZZRuBJzUg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -35,7 +34,6 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "VD5MhmQRhYVfxyDs1fyruPTj3pYwLMV5dXJkPUVg1KKbJ9qr/tEn3frJA1NN1jdeVBt1RrW5FXr+wWG9YoO9Yg==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -72,7 +70,6 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "lU9+gyEz+jSeR+QsZxZtDf0U2DS/pl3I8/m7YeKjHMnjqoxUKFbSOpzegll7bhq0Alw7/8gF2Byrcy+PlzRc/g==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -106,7 +103,6 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "ygdShf5lzRsqe7/pMNSaiq6AcAy0eIhp8WFUtYfqQnsxhMJFcw/VlIFvie8+DkYhacdmGkXTF4OGopjjwfg02A==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -141,7 +137,6 @@
       ]
     },
     "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4": {
-      "serviceable": true,
       "sha": "RrZdqvUm8QbgxnZQuafYGo6NezoKx7VqAfAtHVzoKBm3GSV8xlPh90u1fsGhNCv37xJNk5PuRCa4Mq27ko7pLw==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
@@ -171,7 +166,6 @@
       ]
     },
     "Newtonsoft.Json/6.0.6": {
-      "serviceable": false,
       "sha": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
       "frameworks": {
         "DNX,Version=v4.5.1": {
