@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 using Microsoft.Azure.Documents;
 using System.Threading.Tasks;
 using CommandTool.DocumentDb;

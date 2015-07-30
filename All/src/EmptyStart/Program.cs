@@ -1,24 +1,17 @@
 ﻿using Microsoft.Framework.ConfigurationModel;
-using Microsoft.Framework.Runtime;
 using System;
+using Microsoft.Framework.Configuration;
 
 namespace EmptyStart
 {
     public class Program
-    {
-        public Program(ILibraryManager libraryManager)
-        {
-            foreach (var lib in libraryManager.GetLibraries())
-            {
-                Console.WriteLine(lib.Name);
-            }
-        }
-
+    {   
         public static void Main(string[] args)
         {
-            var config = new Configuration()
+            var config = new ConfigurationBuilder(".")
                             .AddJsonFile("config.json")
-                            .AddCommandLine(args);
+                            .AddCommandLine(args)
+                            .Build();
 
             Console.WriteLine(config.Get("message"));
 

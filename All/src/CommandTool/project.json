@@ -1,14 +1,16 @@
 ﻿{
-    "version": "1.0.0-*",
-    "dependencies": {
-        "Microsoft.Azure.DocumentDB": "1.0.0",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4"
-    },
-    "commands": {
-        "me": "CommandTool"
-    },
-    "frameworks": {
-        "dnx451": {
-        }
+  "version": "1.0.0-*",
+  "dependencies": {
+    "Microsoft.Azure.DocumentDB": "1.0.0",
+    "Microsoft.Framework.Configuration.Json": "1.0.0-beta5",
+    "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+    "Microsoft.Framework.Configuration.EnvironmentVariables": "1.0.0-beta5"
+  },
+  "commands": {
+    "me": "CommandTool"
+  },
+  "frameworks": {
+    "dnx451": {
     }
+  }
 }

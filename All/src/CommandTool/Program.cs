@@ -1,5 +1,5 @@
 ﻿using CommandTool.DocumentDb;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +13,10 @@ namespace CommandTool
 
         public void Main(string[] args)
         {
-            Configuration = new Configuration()
-                                    .AddJsonFile("config.json")
-                                    .AddEnvironmentVariables();
+            Configuration = new ConfigurationBuilder(".")
+                                .AddJsonFile("config.json")
+                                .AddEnvironmentVariables()
+                                .Build();
             Console.WriteLine(Configuration.Get("DbUri"));
             try {
                 var task = DocSerializtionExperiment();

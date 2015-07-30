@@ -1,30 +1,144 @@
 {
   "locked": false,
-  "version": -9999,
-  "projectFileDependencyGroups": {
-    "": [
-      "Microsoft.Azure.DocumentDB >= 1.0.0",
-      "Microsoft.Framework.ConfigurationModel.Json >= 1.0.0-beta4"
-    ],
-    "DNX,Version=v4.5.1": []
+  "version": -9996,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Microsoft.Azure.DocumentDB/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11"
+        },
+        "compile": {
+          "lib/net40/Microsoft.Azure.Documents.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Azure.Documents.Client.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration/1.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta5"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta5": {
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.EnvironmentVariables/1.0.0-beta5": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta5"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.EnvironmentVariables.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.EnvironmentVariables.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Json/1.0.0-beta5": {
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.6",
+          "Microsoft.Framework.Configuration": "1.0.0-beta5"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Configuration.Json.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Configuration.Json.dll": {}
+        }
+      },
+      "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
+        "dependencies": {
+          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4",
+          "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4"
+        },
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll": {}
+        }
+      },
+      "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4": {
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll": {}
+        }
+      },
+      "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4": {
+        "frameworkAssemblies": [
+          "mscorlib",
+          "System",
+          "System.Core",
+          "Microsoft.CSharp"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll": {}
+        }
+      },
+      "Newtonsoft.Json/6.0.6": {
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
   },
   "libraries": {
     "Microsoft.Azure.DocumentDB/1.0.0": {
-      "sha": "ztSRPJbla+xUNb/wbFce0NsvB65mEgdLCCGPX77VzoDJrA9+K6RepTpo1TrIvAJFczPhCUWCELbKMZZRuBJzUg==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {
-            "Newtonsoft.Json": "4.5.11"
-          },
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/net40/Microsoft.Azure.Documents.Client.dll"
-          ],
-          "compileAssemblies": [
-            "lib/net40/Microsoft.Azure.Documents.Client.dll"
-          ]
-        }
-      },
+      "sha512": "ztSRPJbla+xUNb/wbFce0NsvB65mEgdLCCGPX77VzoDJrA9+K6RepTpo1TrIvAJFczPhCUWCELbKMZZRuBJzUg==",
       "files": [
         "Microsoft.Azure.DocumentDB.1.0.0.nupkg",
         "Microsoft.Azure.DocumentDB.1.0.0.nupkg.sha512",
@@ -33,28 +147,69 @@
         "lib/net40/Microsoft.Azure.Documents.Client.XML"
       ]
     },
+    "Microsoft.Framework.Configuration/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "UBw3f+fKi4/WHWIz3oTKF5UiLjmfvTiDgU9oCjYYApqKUMIji4VPbgsoqCzEzgXPHpLHDGkBal6Ux0Gcgu15Ig==",
+      "files": [
+        "Microsoft.Framework.Configuration.1.0.0-beta5.nupkg",
+        "Microsoft.Framework.Configuration.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.Framework.Configuration.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.xml",
+        "lib/net45/Microsoft.Framework.Configuration.dll",
+        "lib/net45/Microsoft.Framework.Configuration.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "dW5gHHlvvNnrFFSGtfOFhKClSi9Eb4WFPVdrrIbZYq2gIVw2Dde740p68H3+v9Fr511sk4yPCkGZ0wqXm1GObw==",
+      "files": [
+        "Microsoft.Framework.Configuration.Abstractions.1.0.0-beta5.nupkg",
+        "Microsoft.Framework.Configuration.Abstractions.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.Framework.Configuration.Abstractions.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.Configuration.Abstractions.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration.EnvironmentVariables/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "Tfm9RDrFJI2xhQy2glkmJnC8gMY9991gMyNGO/Ndt2SFlCXMZFJpVxlbrdJoL7K1hWfRqHkUnPWddxKtVFyIcA==",
+      "files": [
+        "Microsoft.Framework.Configuration.EnvironmentVariables.1.0.0-beta5.nupkg",
+        "Microsoft.Framework.Configuration.EnvironmentVariables.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.Framework.Configuration.EnvironmentVariables.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.EnvironmentVariables.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.EnvironmentVariables.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.EnvironmentVariables.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.EnvironmentVariables.xml",
+        "lib/net45/Microsoft.Framework.Configuration.EnvironmentVariables.dll",
+        "lib/net45/Microsoft.Framework.Configuration.EnvironmentVariables.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration.Json/1.0.0-beta5": {
+      "serviceable": true,
+      "sha512": "oEfKwn889qloLLaz89X3Gvh4tcPeHHrqyQlAtmYHrzfE3EakkV3g8pBMIL8s26G8pIOfSaLyK3MMMqD7nxYMPA==",
+      "files": [
+        "Microsoft.Framework.Configuration.Json.1.0.0-beta5.nupkg",
+        "Microsoft.Framework.Configuration.Json.1.0.0-beta5.nupkg.sha512",
+        "Microsoft.Framework.Configuration.Json.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.Json.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.Json.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.Json.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.Json.xml",
+        "lib/net45/Microsoft.Framework.Configuration.Json.dll",
+        "lib/net45/Microsoft.Framework.Configuration.Json.xml"
+      ]
+    },
     "Microsoft.Framework.ConfigurationModel/1.0.0-beta4": {
-      "sha": "VD5MhmQRhYVfxyDs1fyruPTj3pYwLMV5dXJkPUVg1KKbJ9qr/tEn3frJA1NN1jdeVBt1RrW5FXr+wWG9YoO9Yg==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {
-            "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4",
-            "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4"
-          },
-          "frameworkAssemblies": [
-            "mscorlib",
-            "System",
-            "System.Core",
-            "Microsoft.CSharp"
-          ],
-          "runtimeAssemblies": [
-            "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll"
-          ],
-          "compileAssemblies": [
-            "lib/dnx451/Microsoft.Framework.ConfigurationModel.dll"
-          ]
-        }
-      },
+      "serviceable": true,
+      "sha512": "VD5MhmQRhYVfxyDs1fyruPTj3pYwLMV5dXJkPUVg1KKbJ9qr/tEn3frJA1NN1jdeVBt1RrW5FXr+wWG9YoO9Yg==",
       "files": [
         "Microsoft.Framework.ConfigurationModel.1.0.0-beta4.nupkg",
         "Microsoft.Framework.ConfigurationModel.1.0.0-beta4.nupkg.sha512",
@@ -70,24 +225,8 @@
       ]
     },
     "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4": {
-      "sha": "lU9+gyEz+jSeR+QsZxZtDf0U2DS/pl3I8/m7YeKjHMnjqoxUKFbSOpzegll7bhq0Alw7/8gF2Byrcy+PlzRc/g==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {},
-          "frameworkAssemblies": [
-            "mscorlib",
-            "System",
-            "System.Core",
-            "Microsoft.CSharp"
-          ],
-          "runtimeAssemblies": [
-            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
-          ],
-          "compileAssemblies": [
-            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Interfaces.dll"
-          ]
-        }
-      },
+      "serviceable": true,
+      "sha512": "lU9+gyEz+jSeR+QsZxZtDf0U2DS/pl3I8/m7YeKjHMnjqoxUKFbSOpzegll7bhq0Alw7/8gF2Byrcy+PlzRc/g==",
       "files": [
         "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4.nupkg",
         "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4.nupkg.sha512",
@@ -102,59 +241,9 @@
         "lib/portable-net451+win81+wpa81/Microsoft.Framework.ConfigurationModel.Interfaces.xml"
       ]
     },
-    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4": {
-      "sha": "ygdShf5lzRsqe7/pMNSaiq6AcAy0eIhp8WFUtYfqQnsxhMJFcw/VlIFvie8+DkYhacdmGkXTF4OGopjjwfg02A==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {
-            "Newtonsoft.Json": "6.0.6",
-            "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4"
-          },
-          "frameworkAssemblies": [
-            "mscorlib",
-            "System",
-            "System.Core",
-            "Microsoft.CSharp"
-          ],
-          "runtimeAssemblies": [
-            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
-          ],
-          "compileAssemblies": [
-            "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll"
-          ]
-        }
-      },
-      "files": [
-        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4.nupkg",
-        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4.nupkg.sha512",
-        "Microsoft.Framework.ConfigurationModel.Json.nuspec",
-        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.dll",
-        "lib/dnx451/Microsoft.Framework.ConfigurationModel.Json.xml",
-        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.dll",
-        "lib/dnxcore50/Microsoft.Framework.ConfigurationModel.Json.xml",
-        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.dll",
-        "lib/net45/Microsoft.Framework.ConfigurationModel.Json.xml"
-      ]
-    },
     "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4": {
-      "sha": "RrZdqvUm8QbgxnZQuafYGo6NezoKx7VqAfAtHVzoKBm3GSV8xlPh90u1fsGhNCv37xJNk5PuRCa4Mq27ko7pLw==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {},
-          "frameworkAssemblies": [
-            "mscorlib",
-            "System",
-            "System.Core",
-            "Microsoft.CSharp"
-          ],
-          "runtimeAssemblies": [
-            "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll"
-          ],
-          "compileAssemblies": [
-            "lib/dnx451/Microsoft.Framework.Runtime.Interfaces.dll"
-          ]
-        }
-      },
+      "serviceable": true,
+      "sha512": "RrZdqvUm8QbgxnZQuafYGo6NezoKx7VqAfAtHVzoKBm3GSV8xlPh90u1fsGhNCv37xJNk5PuRCa4Mq27ko7pLw==",
       "files": [
         "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4.nupkg",
         "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4.nupkg.sha512",
@@ -166,19 +255,7 @@
       ]
     },
     "Newtonsoft.Json/6.0.6": {
-      "sha": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
-      "frameworks": {
-        "DNX,Version=v4.5.1": {
-          "dependencies": {},
-          "frameworkAssemblies": [],
-          "runtimeAssemblies": [
-            "lib/net45/Newtonsoft.Json.dll"
-          ],
-          "compileAssemblies": [
-            "lib/net45/Newtonsoft.Json.dll"
-          ]
-        }
-      },
+      "sha512": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
       "files": [
         "Newtonsoft.Json.6.0.6.nupkg",
         "Newtonsoft.Json.6.0.6.nupkg.sha512",
@@ -200,5 +277,14 @@
         "tools/install.ps1"
       ]
     }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Microsoft.Azure.DocumentDB >= 1.0.0",
+      "Microsoft.Framework.Configuration.Json >= 1.0.0-beta5",
+      "Microsoft.Framework.ConfigurationModel >= 1.0.0-beta4",
+      "Microsoft.Framework.Configuration.EnvironmentVariables >= 1.0.0-beta5"
+    ],
+    "DNX,Version=v4.5.1": []
   }
 }
