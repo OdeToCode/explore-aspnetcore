@@ -1,9 +1,0 @@
-{
-  "jspm": {
-    "directories": {
-      "lib": "wwwroot\\js",
-      "packages": "wwwroot\\jspm_packages"
-    },
-    "configFile": "wwwroot/config.js"
-  }
-}
