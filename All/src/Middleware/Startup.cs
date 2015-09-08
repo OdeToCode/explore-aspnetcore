@@ -3,6 +3,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Logging;
 using Middleware.Middleware;
+using Middleware.Owin;
 
 namespace Middleware
 {

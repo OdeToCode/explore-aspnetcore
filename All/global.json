@@ -1,3 +1,6 @@
 ﻿{
-    "sources": [ "src", "test" ]
+  "sources": [
+    "src",
+    "test"
+  ]
 }
