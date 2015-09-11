@@ -1,0 +1,31 @@
+﻿@using System.Threading.Tasks
+@using Movies.Entities
+
+@model IEnumerable<Movie>
+@{
+    ViewBag.Title = "At The Movies";
+}
+
+<h2>All Movies</h2>
+<hr/>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Release</th>
+        <th>Length</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.Title</td>
+            <td>@movie.Release.Year</td>
+            <td>@movie.Length</td>
+            <td>
+                <a asp-controller="home"
+                   asp-action="delete"
+                   asp-route-id="@movie.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

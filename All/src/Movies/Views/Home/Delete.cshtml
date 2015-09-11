@@ -1,0 +1,13 @@
+﻿@model Movies.Entities.Movie
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<div>
+    You are about to delete @Model.Title. Are you sure?
+    <form asp-controller="home" asp-action="delete" asp-route-id="@Model.Id" method="post">
+        <input type="submit" value="Yes!"/>
+    </form>
+</div>
