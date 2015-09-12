@@ -7,7 +7,8 @@
 <h2>Delete</h2>
 <div>
     You are about to delete @Model.Title. Are you sure?
-    <form asp-controller="home" asp-action="delete" asp-route-id="@Model.Id" method="post">
+    <form asp-controller="home" asp-action="confirm-delete" asp-route-id="@Model.Id" method="post">
         <input type="submit" value="Yes!"/>
     </form>
+    <a asp-controller="home" asp-action="index">Back to home</a>
 </div>

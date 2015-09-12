@@ -18,7 +18,7 @@ namespace Movies.ApiControllers
 
         [HttpGet]
         public async Task<IActionResult> Get()
-        {
+        {            
             var result = await _db.Movies.ToListAsync();
             return new ObjectResult(result);
         }

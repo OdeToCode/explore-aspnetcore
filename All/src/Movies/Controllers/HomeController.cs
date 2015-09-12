@@ -30,7 +30,8 @@ namespace Movies.Controllers
         }
 
         [HttpPost("{id:int}")]
-        public async Task<IActionResult> Delete(int id, FormContext form)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ConfirmDelete(int id)
         {
             var movie = await _db.Movies.FirstOrDefaultAsync(m => m.Id == id);
             if (movie != null)
