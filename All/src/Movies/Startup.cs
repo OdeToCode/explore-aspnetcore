@@ -50,7 +50,7 @@ namespace Movies
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseErrorPage();          
+            app.UseErrorPage();             
             app.UseMvc();
         }
     }
