@@ -9,9 +9,14 @@ using Microsoft.Data.Entity.SqlServer.Metadata;
 namespace Movies.Migrations
 {
     [DbContext(typeof(MovieDb))]
-    partial class MovieDbModelSnapshot : ModelSnapshot
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        public override string Id
+        {
+            get { return "20150928040934_InitialCreate"; }
+        }
+
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta7-15540")

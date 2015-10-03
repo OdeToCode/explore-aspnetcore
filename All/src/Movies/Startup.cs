@@ -5,10 +5,10 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Runtime;
 using Movies.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Microsoft.Dnx.Runtime;
 
 namespace Movies
 {
@@ -34,18 +34,11 @@ namespace Movies
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]);
                 });
 
-            services.AddMvc()
-                .Configure<MvcOptions>(o =>
-                {
-                    var jsonFormatter = o.OutputFormatters.First(f => f.GetType() == typeof(JsonOutputFormatter));
-                    o.OutputFormatters.Remove(jsonFormatter);
-
-                    var newSettings = new JsonSerializerSettings()
-                    {
-                        ContractResolver = new CamelCasePropertyNamesContractResolver()
-                    };
-                    o.OutputFormatters.Add(new JsonOutputFormatter(newSettings));
-                });
+            services
+                .AddMvc()
+                .AddJsonOptions(o => o.SerializerSettings.ContractResolver = 
+                                new CamelCasePropertyNamesContractResolver());
+                
         }
 
         public void Configure(IApplicationBuilder app)
