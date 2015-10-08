@@ -13,10 +13,7 @@ namespace ProtectStatic
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(options =>
-            {
-                options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            });
+            services.AddAuthentication();
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Authenticated", p => p.RequireAuthenticatedUser());
@@ -52,8 +49,7 @@ namespace ProtectStatic
             app.UseProtectFolder(new ProtectFolderOptions
             {
                 Path = "/Secret",
-                PolicyName = "Authenticated",
-                AuthenticationScheme = CookieAuthenticationDefaults.AuthenticationScheme
+                PolicyName = "Authenticated"
             });
             app.UseStaticFiles();
 

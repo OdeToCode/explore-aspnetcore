@@ -2468,7 +2468,7 @@
     "Microsoft.Win32.Primitives/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "iAVxd5AfsLYdN2fzdaJCu681e38SiA5FPE6nkgWWTvNenF3xfGfWn9YgTRnZc9KZoyFS3HUTnQouM9fMC0M0Zg==",
+      "sha512": "TWQTvEUCXe1mlQ6OTHOO4AfpsQeaWpfU1PBjNkSAuZNdDlb2uIBRt0ruO1aSqM9jH+hok87RpaWffIyJyOnpCg==",
       "files": [
         "lib/dotnet/Microsoft.Win32.Primitives.dll",
         "lib/MonoAndroid10/_._",
@@ -2490,7 +2490,7 @@
     "Microsoft.Win32.Registry/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "kOsQFW7mLojbtpeR2/WRYCdnKe42/Mg89SaDl91XIypmxapI6OlPkRDgP9BgfSKeLtDeWO5aIipw+qp1qFx8KQ==",
+      "sha512": "ONgTqiQHecY/CYaf1RF79mGCDv4gd8vFGWtVXpA/9VBFUf164s5XdEMO3/OeFARnS230xnlujpLGep3pFW9F3g==",
       "files": [
         "lib/DNXCore50/Microsoft.Win32.Registry.dll",
         "lib/net46/Microsoft.Win32.Registry.dll",
@@ -2528,7 +2528,7 @@
     "System.Collections/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "a0TAXwml5Up4s0Wn/l6OTaLgyj+AtqWjDCCnuJAE/UXwe0VY7oXLaPmBb08NQ2Q2PnJTnElTZeXB0i9faMsezQ==",
+      "sha512": "5nxF7rLpel65n6081k8h3ptC6qlH+5WVauBCSlxwa6niB6TJeMP+yw8B2bK7IKDrcSv3EsrN7UTkfrqssxS4Eg==",
       "files": [
         "lib/DNXCore50/System.Collections.dll",
         "lib/MonoAndroid10/_._",
@@ -2552,7 +2552,7 @@
     "System.Collections.Concurrent/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "R2TwS/ke/9sQlkG9mNZiepk2IX1/pPjEWeba2oSBRH6BkdUkOc3GVzw1ngPJOsjKP/eL+Pe3WoboeR0ZPB8PJA==",
+      "sha512": "v20w+6uz/rj9kmbly4FDgltPLUtvUhEVxElnpJIcmZ2UEKKM2jNSPGonCdDqdOCWhXiswUPKv0Dxqqe9wwg0Qg==",
       "files": [
         "lib/dotnet/System.Collections.Concurrent.dll",
         "lib/MonoAndroid10/_._",
@@ -2606,7 +2606,7 @@
     "System.ComponentModel/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "BitvHH8eGt3+t0qeXdpQUEg4gF/GN0qE4LRfk5aW2G+HRDl2oRHBpflehdwNpIPBPtHoWpEwxj2ADuQ33fQGzw==",
+      "sha512": "xAqvacYTl713o1wE9E4raMp6ufoAJwb3cOkRWpeKIURrxgSyJsJZN8Za5mIWRsSIn2wil4FNF64fjmtKtostmA==",
       "files": [
         "lib/dotnet/System.ComponentModel.dll",
         "lib/net45/_._",
@@ -2660,7 +2660,7 @@
     "System.Console/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "zjjI63CYWqCUAzSCei5oz/A7FASxw4T3noBOMc+N5HaXYX6HoDp8E9Mhk7xLFoV4eflQnezkvmLaIReTR70Ydg==",
+      "sha512": "IWF/w/9CKVjopFkBIq6dz3XGMOdPBPRAxdp2tu+UPzr9bDG0nB+5MQ+91MQcjcFWpnenKSiRsJu1BccnnXb/RA==",
       "files": [
         "lib/DNXCore50/System.Console.dll",
         "lib/MonoAndroid10/_._",
@@ -2682,7 +2682,7 @@
     "System.Diagnostics.Contracts/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "ADXZihWYvmvu7rBgmgD22a2t/etD8nu6hXqPR55CgobKKk1dCp8iLQXluvGjNtyYSX5P5l5WtMZbNqirG31BbA==",
+      "sha512": "iXXwqLl9I8XD95SmevgGzlpqwY8GRnXJ+FXuHTUlUQuhMdCzPMf8JMOCVRVOcuEXzjBG5+ry7P5DICBnMXUacQ==",
       "files": [
         "lib/DNXCore50/System.Diagnostics.Contracts.dll",
         "lib/net45/_._",
@@ -2705,7 +2705,7 @@
     "System.Diagnostics.Debug/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "arrrhYE262R5hNjQjg0b0TkLcQytxtyCZ5Djl2oIKU/mAht6OX9udZVolKteSrP/I0XsSC9IY/rNRai3vFxKyw==",
+      "sha512": "tMcqYmhwk7a04TXqsNXawBdZqsEzaGL1TfdJx3meFfPbfw7JDelkuOuxPqrwP6knlKhLJH8ztUsVAIYD7Mi6QQ==",
       "files": [
         "lib/DNXCore50/System.Diagnostics.Debug.dll",
         "lib/MonoAndroid10/_._",
@@ -2729,7 +2729,7 @@
     "System.Diagnostics.Process/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "yBIP0ts5Msh3QoiaseqPrc6Sh4e3t3iR9Spd7aVrfJZqUtq0cX96txwL+K/1R594IgN53I2hKpmLhHdWVRk1qA==",
+      "sha512": "Pt6QAiXPNKIobDWHcNqX/wz6+YaTqqxw7f245sX1lz4rZxCmGwlUI0yhV/fXXvT7iPJRDLXSEXTnS3F8GsxK9g==",
       "files": [
         "lib/DNXCore50/System.Diagnostics.Process.dll",
         "lib/MonoAndroid10/_._",
@@ -2751,7 +2751,7 @@
     "System.Diagnostics.Tools/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "SMLM08CszBMNYYM5gTonJwXl1hVDyn5yyyKYzmUutGTvtdQzcgybBgsnl3U3ePgZ9TdxEkLHJqQWdP1tLjY/1w==",
+      "sha512": "j/6iYxVLRNtCsSYZMBC5sZ4Uy9I2JhfiKt8QOmZZ3Vbh/lfcOhM4soACWpZ5rhca8MIHagkV4ExlPA6F2Ef+Ag==",
       "files": [
         "lib/DNXCore50/System.Diagnostics.Tools.dll",
         "lib/net45/_._",
@@ -2808,7 +2808,7 @@
     "System.Globalization/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "yXW8KIhMr2r1IB9yZEJLcjRCkIdu9DO9Qzy7+XSPXON49qI0pbFU10a2TbQJxVj4jNo7R2qqvg2N4FwZqaNSgg==",
+      "sha512": "EP1QanGQDNlRIaoOgJQY/CkAzBGR8kNfSE30xkvso3vwCu5+nsmGcATeaJf9NgiXn1RwI0QfpX02lqUEgMJxbg==",
       "files": [
         "lib/DNXCore50/System.Globalization.dll",
         "lib/MonoAndroid10/_._",
@@ -2865,7 +2865,7 @@
     "System.Globalization.Extensions/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "bs2SEAeAKLrmPmm32k2R2516Y80EZKul0ItMveEUz76QjNC+8MIrYm0rZWawQmDK7gBpPdRx9mmXs6zSj0bGYA==",
+      "sha512": "VaIN/ywmghEDYlhG5MxbxVec5pE47xyPqR4F6qf/DAXseBVdTLn0l81n93Cc94QSJi6v+RtasTwHl5ASfqa5zA==",
       "files": [
         "lib/dotnet/System.Globalization.Extensions.dll",
         "lib/MonoAndroid10/_._",
@@ -2887,7 +2887,7 @@
     "System.IO/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "k0ifEyjQmQhEc1MLynTPTp7Up3vikFu3ogB+i8x9KhdPeSq+CaEH9+eIVULiX2DdduyVjZV5mQanGyHLWprXHg==",
+      "sha512": "wkZi/602eDK6SCtRK8cpfOQuVHP/wb9QZRIqxVoKAdp6xeMDTnJVrPZbE6AnKY9x5vymR9OwZxNZVmZ+2IzGVQ==",
       "files": [
         "lib/DNXCore50/System.IO.dll",
         "lib/MonoAndroid10/_._",
@@ -2911,7 +2911,7 @@
     "System.IO.FileSystem/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "R1t2THiMBUI3Sa5lXJiGzjO4fLXIyQZGp/MUGR4gnt6nar05/nk8ilZplzakk4YXN3V5h+F8LeeiQNZ+4Yw/Bw==",
+      "sha512": "gr+pQbKusONE54GQCoD7jVLJ+ylboO+eK5p1ZJ3/ZSWhA2ReXk5jLwrd0p8G4nEwPb3I+9CKlVME/Wx1Ux5iHA==",
       "files": [
         "lib/DNXCore50/System.IO.FileSystem.dll",
         "lib/MonoAndroid10/_._",
@@ -2934,7 +2934,7 @@
     "System.IO.FileSystem.Primitives/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "OguYM1tjYAxnzxsCrxlU6YbTUqBhLFuaBPUe0BZ4tgRV3XHK6n+Y3bmNpzcCW7NouiNYJkCOEALYJH6aFmEbmw==",
+      "sha512": "VV5HQkQchfkegt8hAWMXzd/BycU+rd3KhCofLh2yKMMuRpfOFilnD8MqnSKMulQ4MP9pnJ2wSzW/pKhmZFqV6Q==",
       "files": [
         "lib/dotnet/System.IO.FileSystem.Primitives.dll",
         "lib/MonoAndroid10/_._",
@@ -2956,7 +2956,7 @@
     "System.IO.FileSystem.Watcher/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "nYnnD4MnMoOOSf/upzwGepTQR+nboyT7J9dTGgzkcyiidQGz7au9+MQDAPlItj7BisZEVgJOq/JVB2e3cUmwkA==",
+      "sha512": "7eMv5Ado4MBwEY1StUJ/lAwLtet+KcXExdMzc31aZu4KMnXMP/UXfGw+jC0vvPpVWcNDFl30AUuP75NhGMTC4A==",
       "files": [
         "lib/DNXCore50/System.IO.FileSystem.Watcher.dll",
         "lib/MonoAndroid10/_._",
@@ -2978,7 +2978,7 @@
     "System.Linq/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "7wKcd3jtQrVSKshlyOJ3X43AU5rwArScYMYgtbyZmzBViJogfFiJfnSzBfzm5XsmJaUOfbCoVj+jdrMOJtdpgQ==",
+      "sha512": "BY9iGcvY0q0cyzv3XzsC2A9WgRISdoCUQwH9l31a/Rqxl5qn11A2ypaGX/Fr18RRoTCnvUXC7MMkGhSCEtwsbQ==",
       "files": [
         "lib/dotnet/System.Linq.dll",
         "lib/net45/_._",
@@ -3000,7 +3000,7 @@
     "System.Linq.Expressions/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "e33FTxQVGdIG9rLOB813sp6987n+3kYmT0F1KqXnQEiDt36S90i/VBpRbLX+uUU5Kb4NiT9Zjvsml1TLuBhNEA==",
+      "sha512": "4Jrye8GXUOBGpc0t8QS6Ei5bhp/dCed1oEGDzKI3K0YERyAYKoSAEaGolTEdierMfOnmdIKf1qCxaKmdj6U+1Q==",
       "files": [
         "lib/DNXCore50/System.Linq.Expressions.dll",
         "lib/MonoAndroid10/_._",
@@ -3056,7 +3056,7 @@
     "System.Net.Primitives/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "OngOJnmjl2P6CRIAsGfJItiTmuKM+TfrcKVjt+nv24ZtxmnSV45wyPghSPRb2/cHiVjHKQ/L7m582LDSfMu/jA==",
+      "sha512": "xmbQ1qCeZIJvhX06dtgKwyREzLKNQx30VVbPTqpfdVNlWdpm4iqqXNz6yD2Jq6VDpLezYBKR9IRxcozil77RLA==",
       "files": [
         "lib/DNXCore50/System.Net.Primitives.dll",
         "lib/MonoAndroid10/_._",
@@ -3079,7 +3079,7 @@
     "System.Net.WebSockets/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "unMeKBrX08ugFeVe2Izz5qlx4tJ4TOhLSlYyuHWM/I5BPl1QOQbDT7dcu56AV+b+wuy105C3JO+0stcNG0RhtQ==",
+      "sha512": "rKZMd12mePmT+q703AylszKL2yzgQa7v9cqV6IkYeGOwksfNAe3WgIOgdVXbHf2sXEV+NSyGjHrTM9q0HAU7ag==",
       "files": [
         "lib/DNXCore50/System.Net.WebSockets.dll",
         "lib/MonoAndroid10/_._",
@@ -3133,7 +3133,7 @@
     "System.Private.Networking/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "PcMdwhnkodbZmOj2RGGH/I5LvsIIdC+GJHORHnvdRFLUZNqIJE/0mEfA2BhWj5wiEbp8TlLyj/vEX6CXE8IKPQ==",
+      "sha512": "oVSynIrR3mIU0b/goscsaZDywr3RLxQijQnaFRKfl/VB3F9rKi5mdr0vHcGVWuq5ALSrG0OLwM8PRA4tM5e3rQ==",
       "files": [
         "lib/DNXCore50/System.Private.Networking.dll",
         "lib/netcore50/System.Private.Networking.dll",
@@ -3147,7 +3147,7 @@
     "System.Private.Uri/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "tdISJm43+PN5cC3iLGrbmsWGjlOo2Ot3ZKxNYkKD9iUtj458iotJLftK4LkV02xvGGV4xM2Ef04AhwWB6FnQBw==",
+      "sha512": "fdKNkf1NIe8FVi8HiPg1NuFb4C1hn1oX/JHBu+S5LoMHorGYxJ6Rwwx5Ig9Flb5vICaeudpsf0Wyzc6israg6g==",
       "files": [
         "lib/DNXCore50/System.Private.Uri.dll",
         "lib/netcore50/System.Private.Uri.dll",
@@ -3162,7 +3162,7 @@
     "System.Reflection/4.1.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "nlguo6AocBKGccv4CFSMCOR2/vU+93u/yvzFKO6ViNJ/SBz2VEZ1nOeW93vqKKpOMJkt3YtTvMWmS+kUGz/1bA==",
+      "sha512": "WbLtaCxoe5XdqEyZuGpemSQ8YBJ8cj11zx+yxOxJfHbNrmu7oMQ29+J50swaqg3soUc3BVBMqfIhb/7gocDHQA==",
       "files": [
         "lib/DNXCore50/System.Reflection.dll",
         "lib/MonoAndroid10/_._",
@@ -3240,7 +3240,7 @@
     "System.Reflection.Extensions/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "edn0X2pCm6QN0FpmupFgCwAFhZbLDiQSU3Bx267gZ60gS9nbKfq9Q4qTPKN2Oq+ImhQvbPoFCZtSw9aqO1K3fA==",
+      "sha512": "aH5KBXgAEkai4ihTW3ycH2J8yNBp2qVh4S6zVWrItIv9yzujMUrQe+daTITa6WCaIjR65RyGalUnIV2CjM9XwA==",
       "files": [
         "lib/DNXCore50/System.Reflection.Extensions.dll",
         "lib/net45/_._",
@@ -3297,7 +3297,7 @@
     "System.Reflection.TypeExtensions/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "Etpayh8D2py7/uLdpT/U3qtKY00gJR1gfnnowPHIEi6revIRgvtADbCgJ5vybAYkDU9vMbjxt+lYvYafPPQ1rg==",
+      "sha512": "MZ1Ke69DuaQWTJvIhD+hhvF7VMRNnIbQoTHpM6taTEt8pP2yun7AdlspTem6/Wku0wjazYbueleIbZl/AqJz4Q==",
       "files": [
         "lib/DNXCore50/System.Reflection.TypeExtensions.dll",
         "lib/MonoAndroid10/_._",
@@ -3321,7 +3321,7 @@
     "System.Resources.ResourceManager/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "O+C2+HH7K9JfyT6ELWnADrl90WPImb4aQ6cC2elKi61dH3aOuciZ4yKgVDMjfsvPxCEOELtDwYrroEito0xGvg==",
+      "sha512": "7ioHnWtsxL1KuzWr0a4OxyymR9Q/HGjDFX2cy7Sl1iG/1y/5Td7CkVsoDEYbgEJbelrKCsWNME2RcjF845fNEQ==",
       "files": [
         "lib/DNXCore50/System.Resources.ResourceManager.dll",
         "lib/net45/_._",
@@ -3344,7 +3344,7 @@
     "System.Runtime/4.0.21-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "00RlFeePaBvEcnrd+FC9GPMbTPmrfwD6vM2dmGRIGsGjP01Xe9b9ZZYKGC/AudCIzyBvtLEVneYeLl+5hSnIZA==",
+      "sha512": "3YYoQMbbiX6ayLsynZtnA+x7KIMier2NivCOxNzlfDb/ZmpVFCQ2XyYd33JYAVM7TnfFbFMzKZxD1kC+zo8wYA==",
       "files": [
         "lib/DNXCore50/System.Runtime.dll",
         "lib/MonoAndroid10/_._",
@@ -3368,7 +3368,7 @@
     "System.Runtime.Extensions/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "crElsF4wljPNYuK8RgwEwxW0++MGp0AWpwz+aeMoAmcvqD7pNyf760u+kK+DFjbhkPLRf3lB8mVfgIOxLrZzyg==",
+      "sha512": "Dgqglr6Xq3FYrJRPOzIEfACJBxAYfrzzuv4i2vVEwS8LhvA0oSBCM4OwlrPQTNOhFL+VKvogcHKs6O53DnAvZw==",
       "files": [
         "lib/DNXCore50/System.Runtime.Extensions.dll",
         "lib/MonoAndroid10/_._",
@@ -3426,7 +3426,7 @@
     "System.Runtime.InteropServices/4.0.21-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "hVsdPKJ4xS0LZNBMnggMkdYTDbD5xiHbWNTUXKSEfP27XES8GmJH91885cR9m+mu+vdN2VGVVaxRVOY5jY0uQA==",
+      "sha512": "vFlRmA5VYtwNm/1tN+C/xCqOf/yfieg/lbAsI4ddUhQ1/c3voh6OB1cKmzuVe/Qn3BYqjEZP5d4vFiwIsZDvJw==",
       "files": [
         "lib/DNXCore50/System.Runtime.InteropServices.dll",
         "lib/MonoAndroid10/_._",
@@ -3481,7 +3481,7 @@
     "System.Security.Claims/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "Qdza1tJjvdKvz3aGcFTHo3DtEyCsJM0JQn9bLFkNtK8ho10yuEV2tvRqTOx19wlutSXBbhDftzTRLS6qmnir4Q==",
+      "sha512": "6HpwXj/NmPJJcJfPlTq340iQOPPUgMRGY/q4hU2IaD5fEJtV2VBxd4JQ1SKKl5Ez0I/EBeEehnCOveCdO958MA==",
       "files": [
         "lib/dotnet/System.Security.Claims.dll",
         "lib/MonoAndroid10/_._",
@@ -3503,7 +3503,7 @@
     "System.Security.Cryptography.Algorithms/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "BvUX0qHC9DKP6kjhS6EvHFKSXiiTxPlNvni44x+QAKWsBPWZQLUJVNyiORdRZEqg1zKKV4UI3fo0WTgBIHAPhw==",
+      "sha512": "GjeU8uLxWigoEEtfD2aBtPLmskJNnanmUwNSNKdHHzIuGr69hwmSsaVA1IDJSQ1dX5WQY32v1O1MROCfEq/Seg==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.Algorithms.dll",
         "lib/MonoAndroid10/_._",
@@ -3525,7 +3525,7 @@
     "System.Security.Cryptography.Csp/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "0DJq6Ju6Bo77cMRi8S94uNhkUtpRG6OKUA7EL7qR+Vls31eMtHzG7b8AumxvUDn2dDZLAOyTnIK9Dr+/O5gJFw==",
+      "sha512": "1jST6Vz6/AjO4yFb0Ebw2TJQwVq3FNoBazRjgXBaCgUpL3uomg0XyzeGFoeL3Yy/GB3KGF2OzthtsNH/ikQfvg==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.Csp.dll",
         "lib/MonoAndroid10/_._",
@@ -3547,7 +3547,7 @@
     "System.Security.Cryptography.Encoding/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "enH7FuDRTkGo8SN2uZRs3y54zPC80WMtFpmeBA3/lD6FfSz07B7Pm2fihm0vPSxKCkv5szj/WivwpxS1LqN9LQ==",
+      "sha512": "cnSypPb7Xhng+D/VRZyu+bPvQ4+ShNt6epFmFRfYRPqmRcVHdYxuIOVTPSvbqkIz56IeYW8xOwkuOU7YdRUzbg==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.Encoding.dll",
         "lib/MonoAndroid10/_._",
@@ -3569,7 +3569,7 @@
     "System.Security.Cryptography.Primitives/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "+d/qgU+N70qzg5oE5x/7NC4Y6LPwGVFbcQRl4MggXJrjWtO/dbybLTpMr3hj07nl17Fj7GxGjpwRZaIGnpux/w==",
+      "sha512": "acOPCfkrkOFr/NAnA+hIOnY8yQZr94JzJ02heQDIqE0sFKyBITLbgQBoO+gTBVRxGr1o+oiYbFnXY0Q30+SACg==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.Primitives.dll",
         "lib/MonoAndroid10/_._",
@@ -3591,7 +3591,7 @@
     "System.Security.Cryptography.X509Certificates/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "SsMAR1PZq3JfGX8IsSdK2sc6pxRp0u/m5EPqo6y5j6Z08hEWsD/U9keQhSKBEG/4Ny1RyQ7yB7xMgDuB/MPd4Q==",
+      "sha512": "B1IFymfZHmgOprkMBkFQBdU7ctcG4IZe07v6p2HjVJMwWoRULJtpFAosDOhWpi5cNbjW6SvuiJAfxApQ0t99YA==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.X509Certificates.dll",
         "lib/MonoAndroid10/_._",
@@ -3613,7 +3613,7 @@
     "System.Security.Principal/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "BcGe2wP+/DsDv/Tpfbzz7CyRiYLxKSm9dRhY3Fs8wAkVAJmJY+IrHWqoZnegCSOIJ9pxN9h++48NL4pnbW39zw==",
+      "sha512": "DidXniZHxQUsTpf3R6AoYucXRAs8wUWmiWVvFfSpf8E1LfVNPjHwnZuQIaRaHpFaK6uRekJ07y+gs7xvfNuhoQ==",
       "files": [
         "lib/dotnet/System.Security.Principal.dll",
         "lib/net45/_._",
@@ -3635,7 +3635,7 @@
     "System.Security.Principal.Windows/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "EPUMw2utJKSo9PW+P8X9Ci9791xHN2zD2rnp8L1878KRwB2sIheVX9fhR6VE9xx4goQWQiIX21GfKS1pgdmgSA==",
+      "sha512": "wnV9/UuJ6Vt6RMlp72RtNbzQaqspeHypl7D3TNeLg/Xy+63tJASbVXfNZ9V3Q+TZ9KjJJDFSIpv6e1w6uLJJCA==",
       "files": [
         "lib/DNXCore50/System.Security.Principal.Windows.dll",
         "lib/net46/System.Security.Principal.Windows.dll",
@@ -3649,7 +3649,7 @@
     "System.Security.SecureString/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "yeh8SaUJQx7BsyqntzyU0jnnKso5US6QX2g6eHBLC1MRb7swwFb12Bd4N7RwSslEaj6LLWzFKb4Lw8AMaWfXbA==",
+      "sha512": "fWZiVly2v05MLJFbtJBwThJmSQAh1slsEUqVxjy/K58RWHN8ar8BNz/1h318eHNd5vcTA7155awMNNMzY/Cbag==",
       "files": [
         "lib/DNXCore50/System.Security.SecureString.dll",
         "lib/MonoAndroid10/_._",
@@ -3671,7 +3671,7 @@
     "System.Text.Encoding/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "Eq4Fw6/CIoNdQ9Kb4fP2dqwF6fq8oY8M4pCoYG1VYENEevYSFMpvtJG58IbtNoq2ojR8vucv4HtKiMI3rQdRzg==",
+      "sha512": "z86Mk322Z8s3g7pKYB7ZsXcIhfSNuBmziUc5vEgKtrMggpWNcZ6DOhPiqAEJBSfymv2N+h/0xVpzeSVE/iLMHw==",
       "files": [
         "lib/DNXCore50/System.Text.Encoding.dll",
         "lib/MonoAndroid10/_._",
@@ -3695,7 +3695,7 @@
     "System.Text.Encoding.Extensions/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "/AYqaPQmD6Sm3sFQ4cffQYaw12Konredul2cdu9GX0TQgnSwG67DzMD7MAd7u2cNFwmpGDstXnG1EgzQw7cIRQ==",
+      "sha512": "rM8VmuhRseKWeUU81UovPUS8mEAuTucvaSG7BEmEZ3fPLWecL9LKnZTs3OKePlknVZeBeB8swPr2fZ8isHGwSg==",
       "files": [
         "lib/DNXCore50/System.Text.Encoding.Extensions.dll",
         "lib/MonoAndroid10/_._",
@@ -3719,7 +3719,7 @@
     "System.Text.RegularExpressions/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "Wkrt+Fa6JjzRACz7Dgaqd3wdDhZ1giI8M9ISBaVayKXK1D82dCdR+B5ttl4oP+XoH8/kOJvrYxFqahANXeiOlA==",
+      "sha512": "RM1e/6hkwXjPN9wJytxqnEaaAknR63g1g3yrwPvun8VAZPixjIjo3tO5Y7KnW9k4GSKwkFmUJnUxBwse6VMTMA==",
       "files": [
         "lib/dotnet/System.Text.RegularExpressions.dll",
         "lib/MonoAndroid10/_._",
@@ -3741,7 +3741,7 @@
     "System.Threading/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "W0tZYWumMM2IoJJzv4e3CbtJLqmsOuo/H8uva4bO7relUPhkZL9c0sXWI3sIv6BJwXbrVM2W2JJGk9PyEi3sJg==",
+      "sha512": "B/+Lw3Z8IQCMtVT0/2ywBSnT35DleljjmwYqdtM1+LpBo5pf8WX/6lwZF0XSgXjROjxz5oe1IArTgv0uZ+0aOQ==",
       "files": [
         "lib/DNXCore50/System.Threading.dll",
         "lib/MonoAndroid10/_._",
@@ -3765,7 +3765,7 @@
     "System.Threading.Overlapped/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "qlOEHgFtaXF5pR6JdkL+P1vTsOBhp8RbY26PcIkJhE1ipm1o2YYePhd+lIUdcXWfEJxeKKLl2TdPotbVxEuSkw==",
+      "sha512": "RV3QnaZs+mvukC6STkvwpyVps8r8tco9qh85BBChapX0AgiIgarGbDlPLeuAfPm584Qh8efKYMiqFkaSI08kZg==",
       "files": [
         "lib/DNXCore50/System.Threading.Overlapped.dll",
         "lib/net46/System.Threading.Overlapped.dll",
@@ -3780,7 +3780,7 @@
     "System.Threading.Tasks/4.0.11-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "HXGeC5GxXwli7aalRQV/XIEVhPGtvLsH9iH1Pq87kfspAm5Gr5n9US0mMjJdksy4xr7cd6irAFGt10VD2V2e8g==",
+      "sha512": "8NHb4nr8zepyfG64hNmQ94LOwfD3DVU+ij+Kj33VrNOZTiHze246nV935gE00XUaIK9IATklpcQ15Le9aF3ZhQ==",
       "files": [
         "lib/DNXCore50/System.Threading.Tasks.dll",
         "lib/MonoAndroid10/_._",
@@ -3804,7 +3804,7 @@
     "System.Threading.Thread/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "ZRcBjGWWC/KBJkobKqs2VLh6WBm1hMwQnY502FYl/2lR2XexzIzkWw1vC5bhNKVJ8jMEK82nSVt775q0i8k1rg==",
+      "sha512": "bT6etm8UPPzO1J1Hf3PsafbG8UN8B0/ku0v8b0/q75X6EIQFnxajuKKe8CXtrjGEDQZv+hPnyZMqvp42rXo0yA==",
       "files": [
         "lib/DNXCore50/System.Threading.Thread.dll",
         "lib/MonoAndroid10/_._",
@@ -3826,7 +3826,7 @@
     "System.Threading.ThreadPool/4.0.10-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "PhzoJxm1zWxvCg96n3Ok1rDIQbWmi37bhnFgY1GJoGp5s/0RGDOFI3T6uWQX27NHMy1L2uU5f5x5HmuzRjLyMQ==",
+      "sha512": "QX+0t6MbaSJ+NedX9HhT8inVFkuaCM3OQioPw6+Ma6SVS9kJoWY4K8H280wssZSjVB7+tv5qUqTYtJ/wodvSTg==",
       "files": [
         "lib/DNXCore50/System.Threading.ThreadPool.dll",
         "lib/MonoAndroid10/_._",
@@ -3848,7 +3848,7 @@
     "System.Threading.Timer/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "yvM2+vU/AQ1n+y317/ZUd0WEDSQ687c5pbcc4vc2bm14HG49j0rFem91qok5UEyh1Vnah0nF/NiIydhr9cTmNg==",
+      "sha512": "/9Vpl4IufMAx4Rea4ZlpjtlF744vSraJbYj8yFG3pXTHtH27VYcDUpBScVaM1mmHgOZSh8zyaohhXpzUtIg2/A==",
       "files": [
         "lib/DNXCore50/System.Threading.Timer.dll",
         "lib/net451/_._",

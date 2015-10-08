@@ -11,24 +11,24 @@ namespace ProtectStatic
         private readonly RequestDelegate _next;
         private readonly PathString _path;
         private readonly string _policyName;
-        private readonly string _authenticationScheme;
        
         public ProtectFolder(RequestDelegate next, ProtectFolderOptions options)
         {
             _next = next;
             _path = options.Path;
             _policyName = options.PolicyName;
-            _authenticationScheme = options.AuthenticationScheme;
         }
 
-        public async Task Invoke(HttpContext httpContext, IAuthorizationService authorizationService)
+        public async Task Invoke(HttpContext httpContext, 
+                                 IAuthorizationService authorizationService)
         {
             if(httpContext.Request.Path.StartsWithSegments(_path))
             {
-                var result = await authorizationService.AuthorizeAsync(httpContext.User, null, _policyName);
-                if (!result)
+                var authorized = await authorizationService.AuthorizeAsync(
+                                    httpContext.User, null, _policyName);
+                if (!authorized)
                 {
-                    await httpContext.Authentication.ChallengeAsync(_authenticationScheme);
+                    await httpContext.Authentication.ChallengeAsync();
                     return;
                 }
             }
@@ -39,7 +39,8 @@ namespace ProtectStatic
 
     public static class ProtectFolderExtensions
     {
-        public static IApplicationBuilder UseProtectFolder(this IApplicationBuilder builder, ProtectFolderOptions options)
+        public static IApplicationBuilder UseProtectFolder(this IApplicationBuilder builder, 
+                                                           ProtectFolderOptions options)
         {
             return builder.UseMiddleware<ProtectFolder>(options);
         }
@@ -49,6 +50,5 @@ namespace ProtectStatic
     {
         public PathString Path { get; set; }
         public string PolicyName { get; set; }
-        public string AuthenticationScheme { get; set; }
     }
 }
