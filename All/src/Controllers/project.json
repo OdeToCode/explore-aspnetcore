@@ -3,11 +3,10 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
-    "Microsoft.AspNet.Mvc": "6.0.0-beta7",
-    "Microsoft.AspNet.Mvc.Xml": "6.0.0-beta5",
-    "Microsoft.Framework.CodeGenerators.Mvc": "1.0.0-beta5"
+    "Microsoft.AspNet.Server.IIS": "1.0.0-beta8",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta8",
+    "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+    "Microsoft.AspNet.Mvc.Formatters.Xml": "6.0.0-beta8"
   },
 
   "commands": {

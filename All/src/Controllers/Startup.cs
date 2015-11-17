@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Xml;
+using Microsoft.AspNet.Mvc.Formatters;
 using Microsoft.Framework.DependencyInjection;
 
 namespace Controllers

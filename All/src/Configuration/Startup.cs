@@ -44,9 +44,6 @@ namespace Configuration
             services.AddOptions();
             services.Configure<MessageConfiguration>(Configuration);
             services.AddLogging();
-
-
-
             services.AddScoped<ISecretNumber>(provider => new SecretNumber(Configuration));
         }
 
