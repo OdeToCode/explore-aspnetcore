@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 
 namespace Configuration
 {
@@ -29,8 +28,9 @@ namespace Configuration
         public Startup(IHostingEnvironment environment, 
                        IApplicationEnvironment applicationEnvironment)
         {
-            var builder = new ConfigurationBuilder(applicationEnvironment.ApplicationBasePath);
-            builder.AddJsonFile("config.json")
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(applicationEnvironment.ApplicationBasePath)
+                   .AddJsonFile("config.json")
                    .AddUserSecrets()
                    .AddEnvironmentVariables();
 
@@ -49,6 +49,7 @@ namespace Configuration
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseIISPlatformHandler();
             app.UseMiddleware<GreetingMiddleware>();
         }
     }

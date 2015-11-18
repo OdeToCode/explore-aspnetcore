@@ -17,7 +17,8 @@ namespace Movies
         public Startup(IApplicationEnvironment environment)
         {
             Configuration = 
-                new ConfigurationBuilder(environment.ApplicationBasePath)
+                new ConfigurationBuilder()
+                    .SetBasePath(environment.ApplicationBasePath)
                     .AddJsonFile("config.json")
                     .Build();
         }
@@ -43,7 +44,7 @@ namespace Movies
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseErrorPage();             
+            app.UseDeveloperExceptionPage();             
             app.UseMvc();
         }
     }

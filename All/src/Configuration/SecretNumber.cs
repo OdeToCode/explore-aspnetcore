@@ -16,7 +16,7 @@ namespace Configuration
     {
         public SecretNumber(IConfiguration configuration)
         {
-            _number = int.Parse(configuration.Get("secret"));
+            _number = int.Parse(configuration["secret"]);
         }
 
         public int ComputeNumber()

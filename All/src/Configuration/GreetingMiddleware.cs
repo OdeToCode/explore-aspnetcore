@@ -19,7 +19,7 @@ namespace Configuration
             IOptions<MessageConfiguration> configuration)
         {
             await context.Response.WriteAsync(secretNumber.ComputeNumber().ToString());
-            await context.Response.WriteAsync(configuration.Options.Messages.Salutation);
+            await context.Response.WriteAsync(configuration.Value.Messages.Salutation);
         }
     }
 }
