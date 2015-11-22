@@ -2,13 +2,16 @@
   "userSecretsId": "aspnet5-Configuration-20150907113648",
   "webroot": "wwwroot",
   "version": "1.0.0-*",
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
 
   "dependencies": {
-    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
-    "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
-    "Microsoft.Framework.OptionsModel": "1.0.0-beta8",
-    "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8"
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc1-final",
+    "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final"
   },
 
   "commands": {

@@ -2,8 +2,8 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Security.Claims;
 
@@ -11,6 +11,11 @@ namespace ProtectStatic
 {
     public class Startup
     {
+        public static void Main(string[] args)
+        {
+            WebApplication.Run(args);
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication();
@@ -28,7 +33,7 @@ namespace ProtectStatic
 
             app.UseCookieAuthentication(options =>
             {
-                options.AutomaticAuthentication = true;
+                options.AutomaticAuthenticate = true;
             });
 
             app.Map("/account/login", loginApp =>

@@ -29,7 +29,7 @@ namespace WebApplication.Controllers
 
         public IActionResult Error()
         {
-            return View("~/Views/Shared/Error.cshtml");
+            return View();
         }
     }
 }

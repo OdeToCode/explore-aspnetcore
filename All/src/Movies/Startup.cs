@@ -1,19 +1,21 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
 using Microsoft.Data.Entity;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 using Movies.Services;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Microsoft.Dnx.Runtime;
 
 namespace Movies
 {
     public class Startup
     {
+        public static void Main(string[] args)
+        {
+            WebApplication.Run(args);
+        }
+
         public Startup(IApplicationEnvironment environment)
         {
             Configuration = 

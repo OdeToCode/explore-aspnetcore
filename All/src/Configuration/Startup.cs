@@ -1,28 +1,11 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Dnx.Runtime;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace Configuration
 {
-
-    public interface IConfigurationSource
-    {
-        bool TryGet(string key, out string value);
-
-        void Set(string key, string value);
-
-        void Load();
-
-        IEnumerable<string> ProduceConfigurationSections(
-            IEnumerable<string> earlierKeys,
-            string prefix,
-            string delimiter);
-    }
-
-
     public class Startup
     {
         public Startup(IHostingEnvironment environment, 
@@ -52,5 +35,7 @@ namespace Configuration
             app.UseIISPlatformHandler();
             app.UseMiddleware<GreetingMiddleware>();
         }
+
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
