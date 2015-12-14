@@ -1,0 +1,11 @@
+﻿@model Microsoft.AspNet.Http.Headers.RequestHeaders
+
+<table>
+    @foreach (var header in Model.Headers)
+    {
+        <tr>
+            <td>@header.Key</td>
+            <td>@header.Value</td>
+        </tr>
+    }
+</table>

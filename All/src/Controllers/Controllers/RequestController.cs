@@ -8,8 +8,13 @@ namespace Controllers.Controllers
     {
         public IActionResult Index()
         {
-            var headers = Request.GetTypedHeaders();
-            return new ObjectResult(headers);
+            var requestHeaders = Request.GetTypedHeaders();
+            var responseHeaders = Response.GetTypedHeaders();
+
+            var mediaType = requestHeaders.Accept[0].MediaType;
+            long? length = responseHeaders.ContentLength;
+        
+            return View(requestHeaders);
         }
     }
 }
