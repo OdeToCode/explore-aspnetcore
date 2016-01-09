@@ -1,0 +1,32 @@
+﻿@using System.Threading.Tasks
+@using Microsoft.Extensions.DependencyInjection
+@model IServiceCollection
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Services</title>
+</head>
+<body>
+<div>
+    <div>
+        Service count: @Model.Count()
+    </div>
+    <table>
+        @foreach (var service in Model)
+        {
+            <tr>
+                <td>@service.ServiceType</td>
+                <td>@service.Lifetime</td>
+            </tr>
+
+        }
+    </table>
+</div>
+</body>
+</html>
