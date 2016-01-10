@@ -1,0 +1,64 @@
+﻿@model WorkingMvc6.Controllers.Movie
+
+@{
+    ViewBag.Title = "Stuff with forms";
+    Layout = "_Layout";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<a asp-controller="Hello" asp-action="Services">
+    Go to services
+</a>
+
+<form asp-action="search" asp-antiforgery="false" method="post">
+
+    <label for="term">Search</label>
+    <input type="text" name="term"/>
+    <input type="submit" value="Go"/>
+
+</form>
+
+<hr/>
+
+<form asp-action="update" asp-antiforgery="true" method="post">
+    <div asp-validation-summary="ValidationSummary.All"></div>
+    <label asp-for="Title"></label>
+    <input asp-for="Title"/>
+    <span asp-validation-for="Title"></span>
+    <input type="submit" value="Save"/>
+</form>
+
+<hr />
+
+<form onsubmit="return submitMovie();">
+    <label asp-for="Title"></label>
+    <input asp-for="Title" id="title"/>
+    <input type="submit" value="Save Ajax" />
+</form>
+
+<div id="result">    
+</div>
+
+<script>
+    function submitMovie() {
+
+        var movie = {
+            Title: document.getElementById("title").value
+        }
+       
+        window.fetch("/movie/updateAjax", {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(movie)
+        }).then(function(response) {
+            response.text().then(function(result) {
+                document.getElementById("result").textContent = result;
+            });
+        });
+
+        return false;
+    }
+</script>

@@ -2,18 +2,12 @@
 @using Microsoft.Extensions.DependencyInjection
 @model IServiceCollection
 
-@{
-    Layout = null;
-}
 
-<!DOCTYPE html>
+@{ ViewBag.Title = "Services"; }
 
-<html>
-<head>
-    <title>Services</title>
-</head>
-<body>
 <div>
+    
+
     <div>
         Service count: @Model.Count()
     </div>
@@ -28,5 +22,3 @@
         }
     </table>
 </div>
-</body>
-</html>

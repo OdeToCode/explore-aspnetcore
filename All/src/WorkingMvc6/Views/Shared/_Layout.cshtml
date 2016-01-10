@@ -1,0 +1,26 @@
+﻿@using WorkingMvc6.Components
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>@Component.Invoke(typeof(EnvironmentViewComponent))</div>
+    <div>
+        <my-environment names="Development">
+            You are running in debug
+        </my-environment>
+        <my-environment names="Production">
+            You are in production
+        </my-environment>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        @Component.Invoke(typeof(EnvironmentViewComponent))
+    </footer>
+
+</body>
+</html>
