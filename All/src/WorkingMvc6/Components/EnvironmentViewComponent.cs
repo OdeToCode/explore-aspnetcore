@@ -13,6 +13,11 @@ namespace WorkingMvc6.Components
             _environment = environment;
         }
 
+        //public Task<IViewComponentResult> Invoke()
+        //{
+        //    return Task.FromResult(View(_environment.RuntimeFramework));
+        //}
+
         public IViewComponentResult Invoke()
         {
             return View(_environment.RuntimeFramework);

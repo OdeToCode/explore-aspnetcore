@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>@Component.Invoke(typeof(EnvironmentViewComponent))</div>
+    @*<div>@Component.Invoke(typeof(EnvironmentViewComponent))</div>*@
     <div>
         <my-environment names="Development">
             You are running in debug
@@ -19,7 +19,7 @@
         @RenderBody()
     </div>
     <footer>
-        @Component.Invoke(typeof(EnvironmentViewComponent))
+        @Component.InvokeAsync(typeof(EnvironmentViewComponent))
     </footer>
 
 </body>

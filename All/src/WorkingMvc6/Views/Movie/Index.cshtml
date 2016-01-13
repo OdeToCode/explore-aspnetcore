@@ -23,7 +23,7 @@
 
 <form asp-action="update" asp-antiforgery="true" method="post">
     <div asp-validation-summary="ValidationSummary.All"></div>
-    <label asp-for="Title"></label>
+    <label asp-for="Title">Title</label>
     <input asp-for="Title"/>
     <span asp-validation-for="Title"></span>
     <input type="submit" value="Save"/>
@@ -32,7 +32,7 @@
 <hr />
 
 <form onsubmit="return submitMovie();">
-    <label asp-for="Title"></label>
+    <label asp-for="Title">Title</label>
     <input asp-for="Title" id="title"/>
     <input type="submit" value="Save Ajax" />
 </form>
@@ -47,7 +47,7 @@
             Title: document.getElementById("title").value
         }
        
-        window.fetch("/movie/updateAjax", {
+        window.fetch("/movie/updateAjax?anotherTitle='foo'", {
             method: "put",
             headers: {
                 "Content-Type": "application/json"

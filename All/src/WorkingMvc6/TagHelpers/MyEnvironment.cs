@@ -5,6 +5,12 @@ using Microsoft.Extensions.PlatformAbstractions;
 
 namespace WorkingMvc6.TagHelpers
 {
+
+    // <my-environemnt names="Debug, Production">
+    // .....
+    /./
+
+
     [HtmlTargetElement("my-environment")]
     public class MyEnvironment : TagHelper
     {
@@ -19,6 +25,8 @@ namespace WorkingMvc6.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+
+
             if (Names.Split().Any(n => _env.EnvironmentName == n))
             {
                 return;

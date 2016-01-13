@@ -49,6 +49,7 @@ namespace WebApplication
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

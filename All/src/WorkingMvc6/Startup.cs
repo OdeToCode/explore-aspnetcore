@@ -1,14 +1,15 @@
-﻿using System;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Localization;
+using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Net.Http.Headers;
+using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json.Serialization;
-using WorkingMvc6.Controllers;
 
 namespace WorkingMvc6
 {
@@ -20,6 +21,8 @@ namespace WorkingMvc6
                 .AddMvc(options =>
                 {
                     options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+
+                    options.CacheProfiles.Add("Aggressive", new CacheProfile {Duration = 60});
                 })
                 .AddJsonOptions(options =>
                 {
@@ -29,17 +32,27 @@ namespace WorkingMvc6
                 {
                     options.HtmlHelperOptions.ClientValidationEnabled = false;
                 });
-                               
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyCors", configure =>
+                {
+                    configure.WithOrigins("*").WithMethods("GET");
+                });
+            });
             services.AddSingleton<IServiceCollection>(provider => services);
         }
         
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, IHostingEnvironment env)
         {
             loggerFactory.AddDebug();
             loggerFactory.MinimumLevel = LogLevel.Verbose;
 
-            app.UseDeveloperExceptionPage();
-
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseCors("MyCors");
             app.UseMvc();
 
             app.Run(async context =>

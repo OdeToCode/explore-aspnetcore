@@ -1,0 +1,15 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Time";
+    Layout = "_Layout";
+}
+
+<cache expires-on="@DateTime.Now.AddSeconds(3)">
+    @Model
+</cache>
+
+<cache expires-after="@TimeSpan.FromSeconds(5)" >
+    @Model
+</cache>
+

@@ -9,7 +9,7 @@ namespace WorkingMvc6.Controllers
     [Route("[controller]")]
     public class HelloController : Controller
     {
-        private IApplicationEnvironment _env;
+        private readonly IApplicationEnvironment _env;
 
         public HelloController(IApplicationEnvironment env)
         {
