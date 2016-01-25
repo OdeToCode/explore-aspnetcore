@@ -1,17 +1,29 @@
 ﻿@inherits WorkingMvc6.Views.User.BaseView
 
-<div>
+@using WorkingMvc6.Services;
+
+@using Microsoft.AspNet.Mvc.Razor.Compilation;
+
+@inject IRazorCompilationService CompilationSpy
+
+@functions {
+    public RazorCompilationServiceSpy GetCompilationSpy()
+    {
+        return (RazorCompilationServiceSpy)CompilationSpy;
+    }
+}
+
+<section>
     <h3>Compilation Results</h3>
-    <table>
-        @foreach (var result in GetCompilationSpy().CompilationLog)
-        {
-            <tr>
-                <td><pre>@result.FileInfo.RelativePath</pre></td>
-                <td><pre>@result.Result.CompiledContent</pre></td>
-            </tr>
-        }
-    </table>
-</div>
+
+    @foreach (var result in GetCompilationSpy().CompilationLog)
+    {
+        <h4>@result.FileInfo.RelativePath</h4>
+        <pre>@result.Result.CompiledContent</pre>
+
+    }
+
+</section>
 
 <div>
     Authenticated: @IsAuthenticated()
@@ -23,9 +35,3 @@
     Base type: @GetType().BaseType.AssemblyQualifiedName
 </div>
 
-@functions {
-    public RazorCompilationServiceSpy GetCompilationSpy()
-    {
-        return (RazorCompilationServiceSpy)CompilationSpy;
-    }
-}
