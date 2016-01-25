@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json.Serialization;
+using WorkingMvc6.Services;
+using Microsoft.AspNet.Mvc.Razor.Compilation;
 
 namespace WorkingMvc6
 {
@@ -40,7 +42,11 @@ namespace WorkingMvc6
                     configure.WithOrigins("*").WithMethods("GET");
                 });
             });
-            services.AddSingleton<IServiceCollection>(provider => services);
+
+
+            services.AddSingleton<IRazorCompilationService, RazorCompilationServiceSpy>();
+            services.AddInstance<IServiceCollection>(services);
+            
         }
         
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, IHostingEnvironment env)
