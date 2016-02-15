@@ -4,6 +4,8 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using OdeToFood.Services;
+using Microsoft.AspNet.Routing;
+using System;
 
 namespace OdeToFood
 {
@@ -25,6 +27,7 @@ namespace OdeToFood
             services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
         }
 
         // This method gets called by the runtime. 
@@ -45,7 +48,7 @@ namespace OdeToFood
 
             app.UseFileServer();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(ConfigureRoutes);
 
             app.Run(async (context) =>
             {
@@ -53,6 +56,12 @@ namespace OdeToFood
                 await context.Response.WriteAsync(greeting);
             });
 
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            routeBuilder.MapRoute("Default", 
+                "{controller=Home}/{action=Index}/{id?}");
         }
 
         // Entry point for the application.
