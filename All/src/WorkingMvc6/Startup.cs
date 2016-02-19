@@ -1,24 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Localization;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json.Serialization;
 using WorkingMvc6.Services;
 using Microsoft.AspNet.Mvc.Razor.Compilation;
+using WorkingMvc6.Controllers;
 
 namespace WorkingMvc6
-{
+{   
     public class Startup
-    { 
+    {        
         public void ConfigureServices(IServiceCollection services)
-        {
+        { 
             services
                 .AddMvc(options =>
                 {
@@ -43,13 +40,14 @@ namespace WorkingMvc6
                 });
             });
 
-
             services.AddSingleton<IRazorCompilationService, RazorCompilationServiceSpy>();
-            services.AddInstance<IServiceCollection>(services);
-            
+            services.AddSingleton<IGreeter, Greeter>();
+            services.AddInstance(services);
         }
         
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, 
+                              ILoggerFactory loggerFactory, 
+                              IHostingEnvironment env)
         {
             loggerFactory.AddDebug();
             loggerFactory.MinimumLevel = LogLevel.Verbose;
@@ -71,4 +69,5 @@ namespace WorkingMvc6
         // Entry point for the application.
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
+    
 }

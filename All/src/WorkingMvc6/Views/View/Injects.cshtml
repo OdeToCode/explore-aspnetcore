@@ -1,4 +1,11 @@
-﻿<div>
+﻿@using Microsoft.AspNet.Hosting
+@inject IHostingEnvironment Host;
+
+<div>
+    Running in @Host.EnvironmentName
+</div>
+
+<div>
     This type: @GetType().AssemblyQualifiedName
 </div>
 <div>
