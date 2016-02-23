@@ -52,12 +52,11 @@ namespace OdeToFood.Controllers
         public IActionResult Details(int id)
         {
             var model = _restaurantData.Get(id);
-            if(model == null)
+            if (model == null)
             {
                 return RedirectToAction("Index");
             }
             return View(model);
-        }
-        
+        }   
     }
 }

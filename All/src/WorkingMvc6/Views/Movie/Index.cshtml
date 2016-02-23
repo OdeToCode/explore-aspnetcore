@@ -46,7 +46,7 @@
         var movie = {
             Title: document.getElementById("title").value
         }
-       
+
         window.fetch("/movie/updateAjax?anotherTitle='foo'", {
             method: "put",
             headers: {
@@ -54,10 +54,11 @@
             },
             body: JSON.stringify(movie)
         }).then(function(response) {
-            response.text().then(function(result) {
-                document.getElementById("result").textContent = result;
-            });
+            return response.text();
+        }).then(function(result) {
+            document.getElementById("result").textContent = result;
         });
+
 
         return false;
     }
