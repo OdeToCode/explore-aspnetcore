@@ -1,0 +1,14 @@
+﻿@model OdeToFood.Entities.Restaurant
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@Model.Name</title>
+</head>
+<body>
+    <h1>@Model.Name</h1>
+    <div>Id: @Model.Id</div>
+    <div>Cuisine: @Model.Cuisine</div>
+    <div>
+        @Html.ActionLink("Home", "Index")
+    </div>
+</body>
+</html>
