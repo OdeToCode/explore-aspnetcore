@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using System;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc;
@@ -9,6 +10,7 @@ using Newtonsoft.Json.Serialization;
 using WorkingMvc6.Services;
 using Microsoft.AspNet.Mvc.Razor.Compilation;
 using WorkingMvc6.Controllers;
+using WorkingMvc6.Middleware;
 
 namespace WorkingMvc6
 {   
@@ -41,7 +43,7 @@ namespace WorkingMvc6
             });
 
             services.AddSingleton<IRazorCompilationService, RazorCompilationServiceSpy>();
-            services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IGreeter, Greeter>();
             services.AddInstance(services);
         }
         
@@ -56,6 +58,10 @@ namespace WorkingMvc6
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware(typeof (CoutingMiddleware));
+            app.UseMiddleware(typeof(CoutingMiddleware));
+
             app.UseCors("MyCors");
             app.UseMvc();
 

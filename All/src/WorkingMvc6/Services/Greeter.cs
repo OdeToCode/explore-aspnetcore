@@ -1,4 +1,6 @@
-﻿namespace WorkingMvc6.Services
+﻿using System.Threading;
+
+namespace WorkingMvc6.Services
 {
     public interface IGreeter
     {
@@ -7,9 +9,16 @@
 
     public class Greeter : IGreeter
     {
+        public Greeter()
+        {
+            Interlocked.Increment(ref InstanceCount);
+        }
+
         public string GetGreeting()
         {
             return "Hello, from the greeter!";
         }
+
+        public static int InstanceCount = 0;
     }
 }
