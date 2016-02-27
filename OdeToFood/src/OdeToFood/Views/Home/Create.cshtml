@@ -1,19 +1,17 @@
-﻿@using OdeToFood.Entities
+﻿
 @model Restaurant
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Create</title>
-</head>
-<body>
-    <h1>Create</h1>
+@{
+    ViewBag.Title = "Create";
+}
+<h1>Create</h1>
 
-    @using (Html.BeginForm())        
-    {
-        <div>
-            @Html.LabelFor(m => m.Name)
-            @Html.EditorFor(m => m.Name)
-            @Html.ValidationMessageFor(m => m.Name)
-        </div>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
         <div>
             @Html.LabelFor(m => m.Cuisine)
             @Html.DropDownListFor(m => m.Cuisine, Html.GetEnumSelectList(typeof(CuisineType)))
@@ -22,7 +20,5 @@
         <div>
             <input type="submit" value="Save" />
         </div>
-    }    
+}
 
-</body>
-</html>
