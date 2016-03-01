@@ -2,9 +2,11 @@
 using OdeToFood.ViewModels;
 using OdeToFood.Services;
 using OdeToFood.Entities;
+using Microsoft.AspNet.Authorization;
 
 namespace OdeToFood.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private IGreeter _greeter;
@@ -18,6 +20,7 @@ namespace OdeToFood.Controllers
             _greeter = greeter;
         }
 
+        [AllowAnonymous]
         public ViewResult Index()
         {
             var model = new HomePageViewModel();
