@@ -9,6 +9,7 @@ using System;
 using OdeToFood.Entities;
 using Microsoft.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace OdeToFood
 {
@@ -47,6 +48,7 @@ namespace OdeToFood
         public void Configure(
             IApplicationBuilder app,
             IHostingEnvironment environment,
+            IApplicationEnvironment appEnvironment,
             IGreeter greeter)
         {
             app.UseIISPlatformHandler();
@@ -59,6 +61,8 @@ namespace OdeToFood
             app.UseRuntimeInfoPage("/info");
 
             app.UseFileServer();
+
+            app.UseNodeModules(appEnvironment);
 
             app.UseIdentity();
 

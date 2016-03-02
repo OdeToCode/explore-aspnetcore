@@ -1,0 +1,13 @@
+{
+	"version": "1.0.0",
+	"name": "odetofood",
+	"private": true,
+  "devDependencies": {
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.1",
+    "jquery-validation": "^1.15.0",
+    "jquery-validation-unobtrusive": "^3.2.6"
+  }
+}
