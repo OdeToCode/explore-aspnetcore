@@ -42,6 +42,7 @@ namespace OdeToFood.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, RestaurantEditViewModel input)
         {
             var restaurant = _restaurantData.Get(id);
@@ -63,6 +64,7 @@ namespace OdeToFood.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(RestaurantEditViewModel model)
         {
             if (ModelState.IsValid)
