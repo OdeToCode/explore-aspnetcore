@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Mvc;
-using OdeToFood.Entities;
+﻿using OdeToFood.Entities;
 using OdeToFood.ViewModels;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OdeToFood.Controllers
 {

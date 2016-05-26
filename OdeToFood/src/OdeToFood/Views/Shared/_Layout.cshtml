@@ -1,4 +1,6 @@
-﻿@using System.Security.Claims
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 <!DOCTYPE html>
 
 <html>
@@ -22,10 +24,10 @@
                 <a class="navbar-brand" href="/">Ode to Food</a>
             </div>
             <div class="nav navbar-nav navbar-right">
-                @if (User.IsSignedIn())
+                @if (SignInManager.IsSignedIn(User))
                 {
                     <form method="post" asp-controller="Account" asp-action="Logout" class="navbar-form">
-                        @User.GetUserName()
+                        @UserManager.GetUserName(User)
                         <input type="submit" value="Logout" class="btn btn-danger" />
                     </form>
                 }
@@ -42,7 +44,7 @@
         @RenderBody()
         <footer>
             @RenderSection("footer", false)
-            @Component.Invoke("Greeting")
+            @await Component.InvokeAsync("Greeting")
         </footer>
     </div>
 
