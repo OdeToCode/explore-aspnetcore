@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OdeToFood.Services
+namespace OdeToFood
 {
+
     public interface IGreeter
     {
         string GetGreeting();
@@ -17,7 +18,7 @@ namespace OdeToFood.Services
 
         public Greeter(IConfiguration configuration)
         {
-            _greeting = configuration["greeting"];
+            _greeting = configuration["Greeting"];
         }
 
         public string GetGreeting()
