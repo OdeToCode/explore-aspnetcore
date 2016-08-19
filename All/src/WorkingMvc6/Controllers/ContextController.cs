@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNet.Mvc;
-using Microsoft.Extensions.DependencyInjection;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WorkingMvc6.Controllers
 {

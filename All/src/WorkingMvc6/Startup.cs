@@ -1,16 +1,14 @@
-﻿using System;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Formatters;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using WorkingMvc6.Services;
-using Microsoft.AspNet.Mvc.Razor.Compilation;
-using WorkingMvc6.Controllers;
 using WorkingMvc6.Middleware;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Http;
 
 namespace WorkingMvc6
 {   
@@ -44,16 +42,13 @@ namespace WorkingMvc6
 
             services.AddSingleton<IRazorCompilationService, RazorCompilationServiceSpy>();
             services.AddScoped<IGreeter, Greeter>();
-            services.AddInstance(services);
+            services.AddSingleton(services);
         }
         
         public void Configure(IApplicationBuilder app, 
                               ILoggerFactory loggerFactory, 
                               IHostingEnvironment env)
-        {
-            loggerFactory.AddDebug();
-            loggerFactory.MinimumLevel = LogLevel.Verbose;
-
+        {           
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -70,10 +65,7 @@ namespace WorkingMvc6
                 context.Response.StatusCode = 404;
                 await context.Response.WriteAsync("Route not found");
             });
-        }
-
-        // Entry point for the application.
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+        }        
     }
     
 }

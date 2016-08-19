@@ -1,17 +1,15 @@
-using System.Runtime.Serialization;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.PlatformAbstractions;
 
 namespace WorkingMvc6.Controllers
 {        
     [Route("[controller]")]
     public class HelloController : Controller
     {
-        private readonly IApplicationEnvironment _env;
+        private readonly IHostingEnvironment _env;
 
-        public HelloController(IApplicationEnvironment env)
+        public HelloController(IHostingEnvironment env)
         {
             _env = env;
         }

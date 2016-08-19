@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Logging;
 using Middleware.Middleware;
 
@@ -9,11 +9,6 @@ namespace Middleware
 
     public class Startup
     {
-        public static void Main(string[] args)
-        {
-            WebApplication.Run(args);
-        }
-
         public void ConfigureServices(IServiceCollection services)
         {
         }

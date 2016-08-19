@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 
 namespace Middleware.Middleware
 {

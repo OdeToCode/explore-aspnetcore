@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNet.Mvc.Razor;
-using Microsoft.AspNet.Mvc.Razor.Compilation;
-using Microsoft.Extensions.OptionsModel;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.Razor.Compilation;
+using Microsoft.AspNetCore.Mvc.Razor.Internal;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace WorkingMvc6.Services
 {
@@ -12,9 +14,10 @@ namespace WorkingMvc6.Services
 
         public RazorCompilationServiceSpy(ICompilationService compilationService,
                                           IMvcRazorHost razorHost, 
-                                          IOptions<RazorViewEngineOptions> options)
+                                          IRazorViewEngineFileProviderAccessor fileProviderAccessor,
+                                          ILoggerFactory logger)
         {
-            _inner = new RazorCompilationService(compilationService, razorHost, options);
+            _inner = new RazorCompilationService(compilationService, razorHost, fileProviderAccessor, logger);
             _log = new List<CompileEntry>();
         }
 

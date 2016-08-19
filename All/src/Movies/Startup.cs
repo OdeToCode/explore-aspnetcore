@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.Data.Entity;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.PlatformAbstractions;
 using Movies.Services;
 using Newtonsoft.Json.Serialization;
 
@@ -11,16 +11,11 @@ namespace Movies
 {
     public class Startup
     {
-        public static void Main(string[] args)
-        {
-            WebApplication.Run(args);
-        }
-
-        public Startup(IApplicationEnvironment environment)
+        public Startup(IHostingEnvironment environment)
         {
             Configuration = 
                 new ConfigurationBuilder()
-                    .SetBasePath(environment.ApplicationBasePath)
+                    .SetBasePath(environment.WebRootPath)
                     .AddJsonFile("config.json")
                     .Build();
         }
@@ -31,7 +26,6 @@ namespace Movies
         {
             services
                 .AddEntityFramework()
-                .AddSqlServer()
                 .AddDbContext<MovieDb>(options =>
                 {
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]);

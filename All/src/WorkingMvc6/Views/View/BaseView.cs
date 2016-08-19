@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Mvc.Razor;
+﻿using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace WorkingMvc6.Views.View
 {
