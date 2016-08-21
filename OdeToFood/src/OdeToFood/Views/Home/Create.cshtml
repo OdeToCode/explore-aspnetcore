@@ -1,0 +1,27 @@
+﻿@using OdeToFood.Entities
+@model Restaurant
+<div>
+
+    <h1>Create</h1>
+
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(m => m.Name)
+                @Html.EditorFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Cuisine)
+                @Html.DropDownListFor(m => m.Cuisine, Html.GetEnumSelectList(typeof(CuisineType)))
+                @Html.ValidationMessageFor(m => m.Cuisine)
+            </div>
+            <div>
+                <input type="submit" value="Save!" />
+            </div>
+        }
+
+    </div>
+
+</div>
