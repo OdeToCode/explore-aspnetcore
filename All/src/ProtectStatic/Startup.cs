@@ -1,20 +1,16 @@
-﻿using Microsoft.AspNet.Authentication.Cookies;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Security.Claims;
 
 namespace ProtectStatic
 {
     public class Startup
     {
-        public static void Main(string[] args)
-        {
-            WebApplication.Run(args);
-        }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -27,13 +23,9 @@ namespace ProtectStatic
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment host, ILoggerFactory loggerFactory)
         {
-            loggerFactory.MinimumLevel = LogLevel.Verbose;
-            loggerFactory.AddConsole();
-
-
-            app.UseCookieAuthentication(options =>
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                options.AutomaticAuthenticate = true;
+                AutomaticAuthenticate =  true
             });
 
             app.Map("/account/login", loginApp =>

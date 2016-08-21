@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
-using Microsoft.Data.Entity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Movies.Entities;
 using Movies.Services;
 
@@ -29,7 +29,7 @@ namespace Movies.ApiControllers
             var result = await _db.Movies.FirstOrDefaultAsync(m => m.Id == id);
             if (result == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
             return new ObjectResult(result);
         }
@@ -39,7 +39,7 @@ namespace Movies.ApiControllers
         {
             if (!ModelState.IsValid)
             {
-                return HttpBadRequest(ModelState);
+                return BadRequest(ModelState);
             }
 
             _db.Movies.Add(newMovie);
@@ -52,7 +52,7 @@ namespace Movies.ApiControllers
         {
             if (!ModelState.IsValid)
             {
-                return HttpBadRequest(ModelState);
+                return BadRequest(ModelState);
             }
             _db.Entry(updatedMovie).State = EntityState.Modified;
             await _db.SaveChangesAsync();
@@ -65,7 +65,7 @@ namespace Movies.ApiControllers
             var movie = await _db.Movies.FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
-                return HttpNotFound();
+                return NotFound();
             }
 
             _db.Movies.Remove(movie);

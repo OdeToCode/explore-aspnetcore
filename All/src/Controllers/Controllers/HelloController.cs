@@ -1,5 +1,5 @@
 ﻿using Controllers.Models;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Controllers.Controllers
 {

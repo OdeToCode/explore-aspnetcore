@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Razor.TagHelpers;
-using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace WorkingMvc6.TagHelpers
 {
