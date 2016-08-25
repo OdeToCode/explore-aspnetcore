@@ -7,6 +7,9 @@
 </head>
 <body>
     <div>
+        @await Component.InvokeAsync("LoginLogout")
+    </div>
+    <div>
         @RenderBody()
     </div>
     <footer>

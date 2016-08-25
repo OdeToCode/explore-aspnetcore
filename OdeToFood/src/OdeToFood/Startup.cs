@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Routing;
 using OdeToFood.Services;
 using OdeToFood.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OdeToFood
 {
@@ -40,6 +41,8 @@ namespace OdeToFood
             services.AddScoped<IRestaurantData, SqlRestaurantData>();
             services.AddDbContext<OdeToFoodDbContext>(options => 
                     options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<OdeToFoodDbContext>();
         }
 
         // This method gets called by the runtime. 
@@ -65,6 +68,8 @@ namespace OdeToFood
             }
 
             app.UseFileServer();
+
+            app.UseIdentity();
 
             app.UseMvc(ConfigureRoutes);
 
