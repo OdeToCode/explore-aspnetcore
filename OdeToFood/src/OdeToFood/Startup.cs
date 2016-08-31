@@ -10,6 +10,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Routing;
 using OdeToFood.Services;
+using OdeToFood.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OdeToFood
 {
@@ -35,7 +38,11 @@ namespace OdeToFood
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
+            services.AddDbContext<OdeToFoodDbContext>(options => 
+                    options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<OdeToFoodDbContext>();
         }
 
         // This method gets called by the runtime. 
@@ -61,10 +68,9 @@ namespace OdeToFood
             }
 
             app.UseFileServer();
-
+            app.UseNodeModules(env.ContentRootPath);
+            app.UseIdentity();
             app.UseMvc(ConfigureRoutes);
-
-            app.Run(ctx => ctx.Response.WriteAsync("Not found"));
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)

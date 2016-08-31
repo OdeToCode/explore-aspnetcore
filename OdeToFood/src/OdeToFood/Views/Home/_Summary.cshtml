@@ -1,0 +1,12 @@
+﻿@model Restaurant
+
+<section class="panel panel-default">
+    <h3 class="panel-heading">@Model.Name</h3>
+    <div class="panel-body">
+        Cuisine: @Model.Cuisine
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-primary" asp-action="Details" asp-route-id="@Model.Id">Detail</a>
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    </div>
+</section>

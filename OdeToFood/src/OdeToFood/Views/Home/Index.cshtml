@@ -1,21 +1,16 @@
-﻿@model IEnumerable<OdeToFood.Models.Restaurant>
+﻿@model OdeToFood.ViewModels.HomePageViewModel
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>OdeToFood</title>
-</head>
-<body>
-    <h1>Welcome!</h1>    
+@{
+    ViewBag.Title = "Home";
+}
 
-    <table>
-        @foreach (var restaurant in Model)
-        {
-            <tr>
-                <td>@restaurant.Id</td>
-                <td>@restaurant.Name</td>
-            </tr>
-        }
-    </table>
+<h1>Welcome!</h1>
 
-</body>
-</html>
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant)
+}
+
+<div>
+    <a class="btn btn-primary" asp-action="Create">Create</a>
+</div>
