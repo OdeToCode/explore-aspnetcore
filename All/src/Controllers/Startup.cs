@@ -20,9 +20,8 @@ namespace Controllers
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc(rb =>
-            {            
-            });
+            app.UseDeveloperExceptionPage();
+            app.UseMvc();
         }
     }
 }
