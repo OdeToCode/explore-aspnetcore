@@ -9,7 +9,7 @@ namespace Controllers
     {        
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc();                      
             services.Configure<MvcOptions>(o =>
             {
                 o.InputFormatters.Add(new XmlSerializerInputFormatter());

@@ -14,5 +14,10 @@ namespace OdeToFood.Controllers
         {
             return "USA";
         }
+
+        public string Greeting()
+        {
+            return "Hello from the Greeter!";
+        }
     }
 }
