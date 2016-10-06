@@ -15,8 +15,8 @@ namespace OdeToFood.Entities
 
         public void Initialize()
         {
-            //Database.EnsureCreated();   Doesn't take migrations into account
-            Database.Migrate();
+            Database.EnsureCreated();   //Doesn't take migrations into account
+            //Database.Migrate();
         }
 
         public DbSet<Restaurant> Restaurants { get; set; }
