@@ -1,18 +1,16 @@
-﻿using Microsoft.AspNet.FileProviders;
-using Microsoft.AspNet.StaticFiles;
-using Microsoft.Extensions.PlatformAbstractions;
+﻿using Microsoft.Extensions.FileProviders;
 using System.IO;
 
-namespace Microsoft.AspNet.Builder
+namespace Microsoft.AspNetCore.Builder
 {
     public static class ApplicationBuilderExtensions
     {
         public static IApplicationBuilder UseNodeModules(
-            this IApplicationBuilder app, 
-            IApplicationEnvironment env)
+            this IApplicationBuilder app, string root)
         {
 
-            var path = Path.Combine(env.ApplicationBasePath, "node_modules");
+            var path = Path.Combine(root, "node_modules");
+
             var provider = new PhysicalFileProvider(path);
 
             var options = new StaticFileOptions();
@@ -20,6 +18,7 @@ namespace Microsoft.AspNet.Builder
             options.FileProvider = provider;
 
             app.UseStaticFiles(options);
+
             return app;
         }
     }

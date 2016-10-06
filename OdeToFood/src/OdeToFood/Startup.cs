@@ -1,24 +1,31 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Routing;
 using OdeToFood.Services;
-using Microsoft.AspNet.Routing;
-using System;
 using OdeToFood.Entities;
-using Microsoft.Data.Entity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OdeToFood
 {
     public class Startup
     {
-        public Startup()
+
+        public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json");
+                            .SetBasePath(env.ContentRootPath)
+                            .AddJsonFile("appsettings.json")
+                            .AddEnvironmentVariables();
+
             Configuration = builder.Build();
         }
 
@@ -29,60 +36,47 @@ namespace OdeToFood
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
-            services.AddEntityFramework()
-                    .AddSqlServer()
-                    .AddDbContext<OdeToFoodDbContext>(
-                options => options.UseSqlServer(Configuration["database:connection"]));
-
-            services.AddIdentity<User, IdentityRole>()
-                    .AddEntityFrameworkStores<OdeToFoodDbContext>();
-
-            services.AddSingleton(provider => Configuration);
+            services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
             services.AddScoped<IRestaurantData, SqlRestaurantData>();
+            services.AddDbContext<OdeToFoodDbContext>(options => 
+                    options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<OdeToFoodDbContext>();
         }
 
         // This method gets called by the runtime. 
         // Use this method to configure the HTTP request pipeline.
         public void Configure(
-            IApplicationBuilder app,
-            IHostingEnvironment environment,
-            IApplicationEnvironment appEnvironment,
+            IApplicationBuilder app, 
+            IHostingEnvironment env, 
+            ILoggerFactory loggerFactory,
             IGreeter greeter)
         {
-            app.UseIISPlatformHandler();
+            loggerFactory.AddConsole();
 
-            if (environment.IsDevelopment())
+            if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+               app.UseDeveloperExceptionPage();
             }
-           
-            app.UseRuntimeInfoPage("/info");
+            else
+            {
+                app.UseExceptionHandler(new ExceptionHandlerOptions
+                {
+                    ExceptionHandler = context => context.Response.WriteAsync("Opps!")
+                });
+            }
 
             app.UseFileServer();
-
-            app.UseNodeModules(appEnvironment);
-
+            app.UseNodeModules(env.ContentRootPath);
             app.UseIdentity();
-
             app.UseMvc(ConfigureRoutes);
-
-            app.Run(async (context) =>
-            {
-                var greeting = greeter.GetGreeting();
-                await context.Response.WriteAsync(greeting);
-            });
-
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
         {
-            routeBuilder.MapRoute("Default", 
+            routeBuilder.MapRoute("Default",
                 "{controller=Home}/{action=Index}/{id?}");
         }
-
-        // Entry point for the application.
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }

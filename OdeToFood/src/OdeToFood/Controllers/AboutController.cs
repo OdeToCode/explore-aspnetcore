@@ -1,18 +1,23 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace OdeToFood.Controllers
 {
     [Route("company/[controller]/[action]")]
     public class AboutController
-    {
+    {        
         public string Phone()
         {
-            return "+1-555-555-5555";
+            return "1+555-555-5555";
         }
 
-        public string Country()
+        public string Address()
         {
             return "USA";
+        }
+
+        public string Greeting()
+        {
+            return "Hello from the Greeter!";
         }
     }
 }

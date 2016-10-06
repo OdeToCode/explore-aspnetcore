@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Entities;
 using OdeToFood.ViewModels;
 using System.Threading.Tasks;
@@ -12,34 +12,34 @@ namespace OdeToFood.Controllers
         private UserManager<User> _userManager;
 
         public AccountController(UserManager<User> userManager, 
-                                SignInManager<User> signInManager)
+                                 SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
         [HttpGet]
-        public ViewResult Register()
+        public IActionResult Register()
         {
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterUserViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = new User { UserName = model.Username };
-                var result = await _userManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+
+                var createResult = await _userManager.CreateAsync(user, model.Password);
+                if (createResult.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    foreach (var error in result.Errors)
+                    foreach(var error in createResult.Errors)
                     {
                         ModelState.AddModelError("", error.Description);
                     }
@@ -48,25 +48,30 @@ namespace OdeToFood.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Login(string returnUrl = "")
+        [HttpPost,ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
         {
-            var model = new LoginViewModel { ReturnUrl = returnUrl };
-            return View(model);
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(
-                    model.Username, model.Password, model.RememberMe, false);
-                if (result.Succeeded)
+                var loginResult = await _signInManager.PasswordSignInAsync(
+                                            model.Username, model.Password, 
+                                            model.RememberMe, false);
+                if (loginResult.Succeeded)
                 {
-                    if (!string.IsNullOrEmpty(model.ReturnUrl) &&
-                        Url.IsLocalUrl(model.ReturnUrl))
+                    if (Url.IsLocalUrl(model.ReturnUrl))
                     {
                         return Redirect(model.ReturnUrl);
                     }
@@ -76,17 +81,9 @@ namespace OdeToFood.Controllers
                     }
                 }
             }
-            ModelState.AddModelError("", "Invalid login attempt");
+            ModelState.AddModelError("", "Could not login");
             return View(model);
         }
 
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
     }
 }

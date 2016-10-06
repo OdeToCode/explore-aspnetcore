@@ -1,19 +1,20 @@
-using OdeToFood.Entities;
+﻿using OdeToFood.Entities;
 using System.Collections.Generic;
-using System.Linq;
 using System;
+using System.Linq;
 
 namespace OdeToFood.Services
 {
+
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetAll();
         Restaurant Get(int id);
-        void Add(Restaurant newRestaurant);
-        int Commit();
+        Restaurant Add(Restaurant newRestaurant);
+        void Commit();
     }
 
-    public class SqlRestaurantData : IRestaurantData
+    public class SqlRestaurantData: IRestaurantData
     {
         private OdeToFoodDbContext _context;
 
@@ -22,14 +23,15 @@ namespace OdeToFood.Services
             _context = context;
         }
 
-        public int Commit()
-        {
-            return _context.SaveChanges();
-        }
-
-        public void Add(Restaurant newRestaurant)
+        public Restaurant Add(Restaurant newRestaurant)
         {
             _context.Add(newRestaurant);
+            return newRestaurant;
+        }
+
+        public void Commit()
+        {
+            _context.SaveChanges();
         }
 
         public Restaurant Get(int id)
@@ -39,7 +41,7 @@ namespace OdeToFood.Services
 
         public IEnumerable<Restaurant> GetAll()
         {
-            return _context.Restaurants.ToList();
+            return _context.Restaurants;
         }
     }
 
@@ -49,21 +51,15 @@ namespace OdeToFood.Services
         {
             _restaurants = new List<Restaurant>
             {
-                new Restaurant { Id = 1, Name="Tersiguel's" },
-                new Restaurant { Id = 2, Name = "LJ's and the Kat" },
-                new Restaurant { Id = 3, Name = "King's Contrivance" }
+                new Restaurant { Id = 1, Name="The House of Kobe" },
+                new Restaurant { Id = 2, Name="LJ's and the Kat" },
+                new Restaurant { Id = 3, Name="King's Contrivance" }
             };
         }
 
-        public int Commit()
+        public IEnumerable<Restaurant> GetAll()
         {
-            return 0;
-        }
-
-        public void Add(Restaurant newRestaurant)
-        {
-            newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
-            _restaurants.Add(newRestaurant);
+            return _restaurants;   
         }
 
         public Restaurant Get(int id)
@@ -71,10 +67,18 @@ namespace OdeToFood.Services
             return _restaurants.FirstOrDefault(r => r.Id == id);
         }
 
-        public IEnumerable<Restaurant> GetAll()
+        public Restaurant Add(Restaurant newRestaurant)
         {
-            return _restaurants;
-        }       
+            newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            _restaurants.Add(newRestaurant);
+
+            return newRestaurant;
+        }
+
+        public void Commit()
+        {
+            // ... no op
+        }
 
         static List<Restaurant> _restaurants;
     }

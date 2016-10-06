@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OdeToFood.Services
 {
+
     public interface IGreeter
     {
         string GetGreeting();
@@ -17,7 +18,7 @@ namespace OdeToFood.Services
 
         public Greeter(IConfiguration configuration)
         {
-            _greeting = configuration["greeting"];
+            _greeting = configuration["Greeting"];
         }
 
         public string GetGreeting()

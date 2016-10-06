@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OdeToFood.Entities
 {
     public class User : IdentityUser
     {
-
+        // ...
     }
 }

@@ -5,8 +5,9 @@ namespace OdeToFood.Entities
     public enum CuisineType
     {
         None, 
-        Italian, 
-        French, 
+        Italian,
+        French,
+        Japanese,
         American
     }
 

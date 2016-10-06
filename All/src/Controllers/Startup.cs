@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Formatters;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Controllers
@@ -15,20 +14,13 @@ namespace Controllers
             {
                 o.InputFormatters.Add(new XmlSerializerInputFormatter());
                 o.OutputFormatters.Add(new XmlSerializerOutputFormatter());
-                
             });
         }
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc(rb =>
-            {            
-            });
-        }
-
-        public static void Main(string[] args)
-        {
-            WebApplication.Run(args);
+            app.UseDeveloperExceptionPage();
+            app.UseMvc();
         }
     }
 }

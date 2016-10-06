@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNet.Mvc;
-using OdeToFood.ViewModels;
-using OdeToFood.Services;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Entities;
-using Microsoft.AspNet.Authorization;
+using OdeToFood.Services;
+using OdeToFood.ViewModels;
 
 namespace OdeToFood.Controllers
 {
@@ -12,21 +12,29 @@ namespace OdeToFood.Controllers
         private IGreeter _greeter;
         private IRestaurantData _restaurantData;
 
-        public HomeController(
-            IRestaurantData restaurantData,
-            IGreeter greeter)
+        public HomeController(IRestaurantData restaurantData, IGreeter greeter)
         {
             _restaurantData = restaurantData;
             _greeter = greeter;
         }
 
         [AllowAnonymous]
-        public ViewResult Index()
+        public IActionResult Index()
         {
             var model = new HomePageViewModel();
             model.Restaurants = _restaurantData.GetAll();
-            model.CurrentGreeting = _greeter.GetGreeting();
+            model.CurrentMessage = _greeter.GetGreeting();
 
+            return View(model);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var model = _restaurantData.Get(id);
+            if(model == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             return View(model);
         }
 
@@ -34,7 +42,7 @@ namespace OdeToFood.Controllers
         public IActionResult Edit(int id)
         {
             var model = _restaurantData.Get(id);
-            if (model == null)
+            if(model == null)
             {
                 return RedirectToAction("Index");
             }
@@ -43,22 +51,21 @@ namespace OdeToFood.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, RestaurantEditViewModel input)
+        public IActionResult Edit(int id, RestaurantEditViewModel model)
         {
             var restaurant = _restaurantData.Get(id);
-            if(restaurant != null && ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                restaurant.Name = input.Name;
-                restaurant.Cuisine = input.Cuisine;
+                restaurant.Cuisine = model.Cuisine;
+                restaurant.Name = model.Name;
                 _restaurantData.Commit();
-                
                 return RedirectToAction("Details", new { id = restaurant.Id });
             }
             return View(restaurant);
         }
 
         [HttpGet]
-        public ViewResult Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -69,26 +76,15 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                var restaurant = new Restaurant();
-                restaurant.Name = model.Name;
-                restaurant.Cuisine = model.Cuisine;
-
-                _restaurantData.Add(restaurant);
+                var newRestaurant = new Restaurant();
+                newRestaurant.Cuisine = model.Cuisine;
+                newRestaurant.Name = model.Name;
+                newRestaurant = _restaurantData.Add(newRestaurant);
                 _restaurantData.Commit();
 
-                return RedirectToAction("Details", new { id = restaurant.Id });
+                return RedirectToAction("Details", new { id = newRestaurant.Id });
             }
             return View();
         }
-
-        public IActionResult Details(int id)
-        {
-            var model = _restaurantData.Get(id);
-            if (model == null)
-            {
-                return RedirectToAction("Index");
-            }
-            return View(model);
-        }   
     }
 }

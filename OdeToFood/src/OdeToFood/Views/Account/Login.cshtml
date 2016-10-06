@@ -1,13 +1,12 @@
-﻿@model OdeToFood.ViewModels.LoginViewModel
+﻿@model LoginViewModel
 @{
     ViewBag.Title = "Login";
 }
 
 <h2>Login</h2>
 
-<form method="post" asp-controller="Account" asp-action="Login" 
-      asp-route-returnurl="@Model.ReturnUrl">
-    <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
+<form method="post" asp-antiforgery="true">
+    <div asp-validation-summary="ModelOnly"></div>
     <div>
         <label asp-for="Username"></label>
         <input asp-for="Username" />
