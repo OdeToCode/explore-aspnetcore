@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.Data.Entity.Migrations;
+using Microsoft.Data.Entity.Metadata;
 
 namespace OdeToFood.Migrations
 {
@@ -10,7 +10,7 @@ namespace OdeToFood.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Restaurants",
+                name: "Restaurant",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -20,13 +20,13 @@ namespace OdeToFood.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Restaurants", x => x.Id);
+                    table.PrimaryKey("PK_Restaurant", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("Restaurants");
+            migrationBuilder.DropTable("Restaurant");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNet.Mvc;
 using OdeToFood.Services;
 
 namespace OdeToFood.ViewComponents

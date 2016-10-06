@@ -1,8 +1,8 @@
 using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.Data.Entity;
+using Microsoft.Data.Entity.Infrastructure;
+using Microsoft.Data.Entity.Metadata;
+using Microsoft.Data.Entity.Migrations;
 using OdeToFood.Entities;
 
 namespace OdeToFood.Migrations
@@ -14,7 +14,7 @@ namespace OdeToFood.Migrations
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.0.0-rc2-20901")
+                .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("OdeToFood.Entities.Restaurant", b =>
@@ -29,8 +29,6 @@ namespace OdeToFood.Migrations
                         .HasAnnotation("MaxLength", 80);
 
                     b.HasKey("Id");
-
-                    b.ToTable("Restaurants");
                 });
         }
     }

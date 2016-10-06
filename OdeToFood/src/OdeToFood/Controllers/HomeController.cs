@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNet.Mvc;
 using OdeToFood.ViewModels;
 using OdeToFood.Services;
 using OdeToFood.Entities;
+using Microsoft.AspNet.Authorization;
 
 namespace OdeToFood.Controllers
 {

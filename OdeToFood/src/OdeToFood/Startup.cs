@@ -1,27 +1,24 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Http;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using OdeToFood.Services;
+using Microsoft.AspNet.Routing;
 using System;
-using Microsoft.AspNet.Builder;
 using OdeToFood.Entities;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Hosting.Internal;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace OdeToFood
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup()
         {
             var builder = new ConfigurationBuilder()
-                            .SetBasePath(env.ContentRootPath)
-                            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                            .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
 
@@ -34,11 +31,9 @@ namespace OdeToFood
             services.AddMvc();
 
             services.AddEntityFramework()
-                .AddEntityFrameworkSqlServer()
-                .AddDbContext<OdeToFoodDbContext>(options => options.UseSqlServer(this.Configuration["database:connection"]));
-
-            services.AddDbContext<OdeToFoodDbContext>(options =>
-                options.UseSqlServer(Configuration["database:connection"]));
+                    .AddSqlServer()
+                    .AddDbContext<OdeToFoodDbContext>(
+                options => options.UseSqlServer(Configuration["database:connection"]));
 
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<OdeToFoodDbContext>();
@@ -53,9 +48,11 @@ namespace OdeToFood
         public void Configure(
             IApplicationBuilder app,
             IHostingEnvironment environment,
-            IHostingEnvironment hostingEnvironment,
+            IApplicationEnvironment appEnvironment,
             IGreeter greeter)
         {
+            app.UseIISPlatformHandler();
+
             if (environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -65,7 +62,7 @@ namespace OdeToFood
 
             app.UseFileServer();
 
-            app.UseNodeModules((HostingEnvironment)hostingEnvironment);
+            app.UseNodeModules(appEnvironment);
 
             app.UseIdentity();
 
@@ -84,5 +81,8 @@ namespace OdeToFood
             routeBuilder.MapRoute("Default", 
                 "{controller=Home}/{action=Index}/{id?}");
         }
+
+        // Entry point for the application.
+        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
