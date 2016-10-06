@@ -13,6 +13,8 @@ using OdeToFood.Services;
 using OdeToFood.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace OdeToFood
 {
@@ -35,14 +37,28 @@ namespace OdeToFood
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            
+
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
             services.AddScoped<IRestaurantData, SqlRestaurantData>();
+
+            
             services.AddDbContext<OdeToFoodDbContext>(options => 
                     options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
+
+
+            var provider = services.BuildServiceProvider();
+            var dbCtx = provider.GetService<OdeToFoodDbContext>();
+            dbCtx.Initialize();
+            
+
+
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<OdeToFoodDbContext>();
+
+            
         }
 
         // This method gets called by the runtime. 
