@@ -48,14 +48,6 @@ namespace OdeToFood
             services.AddDbContext<OdeToFoodDbContext>(options => 
                     options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
 
-
-            //Added this to make sure the datbase gets auto created
-            var provider = services.BuildServiceProvider();
-            var dbCtx = provider.GetService<OdeToFoodDbContext>();
-            dbCtx.Initialize();
-            
-
-
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<OdeToFoodDbContext>();
 

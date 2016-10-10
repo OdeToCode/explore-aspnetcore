@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Controllers.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class RequestController : Controller
     {
         public IActionResult Index()
@@ -15,6 +15,11 @@ namespace Controllers.Controllers
             long? length = responseHeaders.ContentLength;
         
             return View(requestHeaders);
+        }
+
+        public IActionResult Connection()
+        {
+            return View(HttpContext.Connection);
         }
     }
 }
