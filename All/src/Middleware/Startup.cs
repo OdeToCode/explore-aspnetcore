@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.StaticFiles;
 using Middleware.Middleware;
 
 namespace Middleware
@@ -9,21 +7,19 @@ namespace Middleware
 
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
-        {
-        }
-
-        public void Configure(IApplicationBuilder app,
-                              IHostingEnvironment environment,
-                              ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
             app.UseMiddleware<RequestLoggerMiddleware>();
-            app.UseStaticFiles();
-            app.UseDeveloperExceptionPage();
-            //app.Run(context =>
-            //{
-            //    throw new System.Exception("Boom!");
-            //});
+
+            var provider = new FileExtensionContentTypeProvider();
+            provider.Mappings.Add(".foo", "text/plain");
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                //ServeUnknownFileTypes = true
+                ContentTypeProvider = provider 
+            });
+            app.UseDeveloperExceptionPage();            
             app.UseSayHello(new SayHelloOptions());                   
         }
     }

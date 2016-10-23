@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -71,6 +72,7 @@ namespace WebApplication
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            ArrayList l;
             app.UseStaticFiles();
 
             app.UseIdentity();
