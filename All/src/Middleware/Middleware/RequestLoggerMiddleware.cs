@@ -13,9 +13,9 @@ namespace Middleware.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            Console.WriteLine("STart request");
+            Console.WriteLine($"Starting {context.TraceIdentifier} in {GetHashCode()}");           
             await _next(context);
-            Console.WriteLine("End request");
+            Console.WriteLine($"Ending {context.TraceIdentifier} in {GetHashCode()}");
         }
 
         RequestDelegate _next;

@@ -5,6 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Configuration
 {
+
+
+
+
     public class Startup
     {
         public Startup(IHostingEnvironment environment)
@@ -12,7 +16,7 @@ namespace Configuration
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(environment.WebRootPath)
                    .AddJsonFile("config.json")
-                   .AddUserSecrets()
+                   .AddUserSecrets<Startup>()
                    .AddEnvironmentVariables();
 
             Configuration = builder.Build();
