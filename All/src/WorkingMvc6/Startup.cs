@@ -40,7 +40,6 @@ namespace WorkingMvc6
                 });
             });
 
-            services.AddSingleton<IRazorCompilationService, RazorCompilationServiceSpy>();
             services.AddScoped<IGreeter, Greeter>();
             services.AddSingleton(services);
         }

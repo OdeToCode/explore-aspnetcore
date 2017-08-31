@@ -25,7 +25,7 @@ namespace Movies
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddEntityFramework()
+                .AddEntityFrameworkSqlServer()
                 .AddDbContext<MovieDb>(options =>
                 {
                     options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]);

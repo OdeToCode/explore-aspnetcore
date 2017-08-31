@@ -14,7 +14,8 @@ namespace ProtectStatic
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication();
+            services.AddAuthentication()
+                    .AddCookie();
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Authenticated", p => p.RequireAuthenticatedUser());
@@ -23,10 +24,7 @@ namespace ProtectStatic
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment host, ILoggerFactory loggerFactory)
         {
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AutomaticAuthenticate =  true
-            });
+            app.UseAuthentication();
 
             app.Map("/account/login", loginApp =>
             {

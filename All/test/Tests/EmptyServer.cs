@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting.Server;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http.Features;
 
 namespace Tests
@@ -11,6 +13,16 @@ namespace Tests
         }
 
         public void Start<TContext>(IHttpApplication<TContext> application)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task StartAsync<TContext>(IHttpApplication<TContext> application, CancellationToken cancellationToken)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task StopAsync(CancellationToken cancellationToken)
         {
             throw new System.NotImplementedException();
         }

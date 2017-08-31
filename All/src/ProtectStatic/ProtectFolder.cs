@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
@@ -25,13 +26,13 @@ namespace ProtectStatic
             {
                 var authorized = await authorizationService.AuthorizeAsync(
                                     httpContext.User, null, _policyName);
-                if (!authorized)
+                if (!authorized.Succeeded)
                 {
                     await httpContext.Authentication.ChallengeAsync();
                     return;
                 }
             }
-
+            
             await _next(httpContext);
         }
     }
