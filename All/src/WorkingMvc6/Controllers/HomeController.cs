@@ -14,6 +14,6 @@ namespace WorkingMvc6.Controllers
         public IActionResult Index([FromServices]IGreeter greeter)
         { 
             return View();
-        }
+        }     
     }
 }
