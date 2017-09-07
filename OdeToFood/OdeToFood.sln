@@ -1,16 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8989638-D60B-42BB-9CD4-F0793C63F56B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AE8CFEEB-C110-4091-A5C9-29CE645C8707}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OdeToFood", "src\OdeToFood\OdeToFood.xproj", "{1A79287C-191C-461F-8D23-C2BDBDA28C30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{F6602C8E-AE01-40EF-B5F7-BCA88DF33C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1A79287C-191C-461F-8D23-C2BDBDA28C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A79287C-191C-461F-8D23-C2BDBDA28C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A79287C-191C-461F-8D23-C2BDBDA28C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A79287C-191C-461F-8D23-C2BDBDA28C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6602C8E-AE01-40EF-B5F7-BCA88DF33C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6602C8E-AE01-40EF-B5F7-BCA88DF33C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6602C8E-AE01-40EF-B5F7-BCA88DF33C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6602C8E-AE01-40EF-B5F7-BCA88DF33C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{1A79287C-191C-461F-8D23-C2BDBDA28C30} = {D8989638-D60B-42BB-9CD4-F0793C63F56B}
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AE0FD7D-4DF8-4A69-8938-9EE0504D5F30}
 	EndGlobalSection
 EndGlobal
