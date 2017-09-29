@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using System.IO;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WorkingMvc6.Controllers
 {
@@ -32,15 +33,17 @@ namespace WorkingMvc6.Controllers
         }
 
         private async Task<string> Render(string viewName, object model)
-        { 
+        {             
             var viewEngineResult = _viewEngine.GetView(null, viewName, true);
             if (viewEngineResult.Success)
             {
                 using (var writer = new StringWriter())
                 {                    
                     var view = viewEngineResult.View;
-                    var actionContext = new ActionContext(HttpContext, RouteData, ControllerContext.ActionDescriptor, ModelState);
-                    var viewContext = new ViewContext(actionContext, view, ViewData, TempData, writer, new HtmlHelperOptions());
+                    var actionContext = new ActionContext(HttpContext, RouteData, 
+                                                ControllerContext.ActionDescriptor, ModelState);
+                    var viewContext = new ViewContext(actionContext, view, ViewData, 
+                                                TempData, writer, new HtmlHelperOptions());
 
                     ViewData.Model = model;
                     await view.RenderAsync(viewContext);

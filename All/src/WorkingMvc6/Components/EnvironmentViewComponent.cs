@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.Versioning;
 
 namespace WorkingMvc6.Components
 {

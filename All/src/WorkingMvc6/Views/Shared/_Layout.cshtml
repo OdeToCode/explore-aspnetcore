@@ -19,7 +19,7 @@
         @RenderBody()
     </div>
     <footer>
-        @Component.InvokeAsync(typeof(EnvironmentViewComponent))
+        @await Component.InvokeAsync(typeof(EnvironmentViewComponent))
     </footer>
 
 </body>

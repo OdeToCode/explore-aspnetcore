@@ -9,6 +9,8 @@ using WorkingMvc6.Services;
 using WorkingMvc6.Middleware;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace WorkingMvc6
 {   
@@ -55,6 +57,19 @@ namespace WorkingMvc6
 
             app.UseMiddleware(typeof (CoutingMiddleware));
             app.UseMiddleware(typeof(CoutingMiddleware));
+
+            var clientPath = Path.Combine(env.ContentRootPath, "client");
+            var fileprovider = new PhysicalFileProvider(clientPath);
+            app.UseDefaultFiles(new DefaultFilesOptions
+            {
+                DefaultFileNames = new [] { "foo.html" },
+                FileProvider = fileprovider
+            });
+            
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = fileprovider               
+            });
 
             app.UseCors("MyCors");
             app.UseMvc();
