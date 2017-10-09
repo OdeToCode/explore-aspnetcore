@@ -13,6 +13,7 @@
             <td>@restaurant.Name</td>
             <td>
                 <a asp-action="Details" asp-route-id="@restaurant.Id">More</a>
+                <a asp-page="/Restaurants/Edit" asp-route-id="@restaurant.Id">Edit</a>
             </td>
         </tr>
     }

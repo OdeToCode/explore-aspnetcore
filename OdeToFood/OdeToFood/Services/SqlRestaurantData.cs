@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using OdeToFood.Models;
 using OdeToFood.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace OdeToFood.Services
 {
@@ -31,6 +32,14 @@ namespace OdeToFood.Services
         public IEnumerable<Restaurant> GetAll()
         {
             return _context.Restaurants.OrderBy(r => r.Name);
+        }
+
+        public Restaurant Update(Restaurant restaurant)
+        {
+            _context.Attach(restaurant).State = 
+                EntityState.Modified;
+            _context.SaveChanges();
+            return restaurant;
         }
     }
 }
