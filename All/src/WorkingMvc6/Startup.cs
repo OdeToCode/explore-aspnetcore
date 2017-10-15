@@ -60,16 +60,21 @@ namespace WorkingMvc6
 
             var clientPath = Path.Combine(env.ContentRootPath, "client");
             var fileprovider = new PhysicalFileProvider(clientPath);
-            app.UseDefaultFiles(new DefaultFilesOptions
-            {
-                DefaultFileNames = new [] { "foo.html" },
-                FileProvider = fileprovider
-            });
+            //app.UseDefaultFiles(new DefaultFilesOptions
+            //{
+            //    DefaultFileNames = new [] { "foo.html" },
+            //    FileProvider = fileprovider
+            //});
             
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = fileprovider               
-            });
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = fileprovider              
+            //});
+
+            var fileServerOptions = new FileServerOptions();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames = new[] { "foo.html" };
+            fileServerOptions.FileProvider = fileprovider;
+            app.UseFileServer(fileServerOptions);
 
             app.UseCors("MyCors");
             app.UseMvc();
