@@ -1,0 +1,9 @@
+﻿@if(User.Identity.IsAuthenticated)
+{
+    <div>Hello, @User.Identity.Name</div>
+    <a asp-controller="Account" asp-action="Logout">Logout</a>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Login</a>
+}

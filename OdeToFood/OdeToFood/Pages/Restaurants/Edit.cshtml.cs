@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OdeToFood.Services;
 using OdeToFood.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OdeToFood.Pages.Restaurants
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private IRestaurantData _restaurantData;
@@ -22,7 +24,7 @@ namespace OdeToFood.Pages.Restaurants
         }
 
         public IActionResult OnGet(int id)
-        {
+        {            
             Restaurant = _restaurantData.Get(id);
             if(Restaurant == null)
             {

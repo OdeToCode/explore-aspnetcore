@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Account\" />
     <Folder Include="Pages\Restaurants\" />
   </ItemGroup>
   
