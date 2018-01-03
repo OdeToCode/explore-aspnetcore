@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using System;
 
 namespace WorkingMvc6
 {   
@@ -46,10 +47,10 @@ namespace WorkingMvc6
             services.AddSingleton(services);
         }
         
-        public void Configure(IApplicationBuilder app, 
+        public void Configure(IApplicationBuilder app, IApplicationLifetime lifetime, 
                               ILoggerFactory loggerFactory, 
                               IHostingEnvironment env)
-        {           
+        {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -57,23 +58,14 @@ namespace WorkingMvc6
 
             app.UseMiddleware(typeof (CoutingMiddleware));
             app.UseMiddleware(typeof(CoutingMiddleware));
-
+                                                                 
             var clientPath = Path.Combine(env.ContentRootPath, "client");
             var fileprovider = new PhysicalFileProvider(clientPath);
-            //app.UseDefaultFiles(new DefaultFilesOptions
-            //{
-            //    DefaultFileNames = new [] { "foo.html" },
-            //    FileProvider = fileprovider
-            //});
-            
-            //app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    FileProvider = fileprovider              
-            //});
-
             var fileServerOptions = new FileServerOptions();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames = new[] { "foo.html" };
+            fileServerOptions.DefaultFilesOptions
+                             .DefaultFileNames = new[] { "foo.html" };
             fileServerOptions.FileProvider = fileprovider;
+
             app.UseFileServer(fileServerOptions);
 
             app.UseCors("MyCors");
@@ -84,7 +76,6 @@ namespace WorkingMvc6
                 context.Response.StatusCode = 404;
                 await context.Response.WriteAsync("Route not found");
             });
-        }        
-    }
-    
+        }       
+    }   
 }

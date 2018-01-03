@@ -29,12 +29,12 @@ namespace Controllers
         public void Configure(IApplicationBuilder app)
         {            
             app.UseDeveloperExceptionPage();
+            app.UseStaticFiles();
             app.UseMvc();
 
             app.Run(async (context) =>
-            {
-                var message = Configuration["Greeting"];
-                await context.Response.WriteAsync(message);
+            {                
+                await context.Response.WriteAsync("Not found");
             });
 
         }
