@@ -1,40 +1,45 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Azure.KeyVault;
+using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Movies.Services;
 using Newtonsoft.Json.Serialization;
+using static Microsoft.Azure.KeyVault.KeyVaultClient;
 
 namespace Movies
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
-            Configuration = 
-                new ConfigurationBuilder()
-                    .SetBasePath(environment.WebRootPath)
-                    .AddJsonFile("config.json")
-                    .Build();
+            Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; set; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services
+            services               
                 .AddEntityFrameworkSqlServer()
                 .AddDbContext<MovieDb>(options =>
                 {
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]);
+                    var connection = Configuration["Data:DefaultConnection:ConnectionString"];
+                    options.UseSqlServer(connection);
                 });
 
             services
-                .AddMvc()
-                .AddJsonOptions(o => o.SerializerSettings.ContractResolver = 
-                                new CamelCasePropertyNamesContractResolver());
+                .AddMvc();
+
+            services.AddSingleton(sp =>
+            {
+                var tokenProvider = new AzureServiceTokenProvider();
+                var callback = new AuthenticationCallback(tokenProvider.KeyVaultTokenCallback);
+                return new KeyVaultClient(callback);
+            });
                 
         }
 

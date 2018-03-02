@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Movies
@@ -7,14 +8,10 @@ namespace Movies
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .Build();
-
-            host.Run();
+            WebHost.CreateDefaultBuilder(args)
+                   .UseStartup<Startup>()
+                   .Build()
+                   .Run();
         }
     }
 }

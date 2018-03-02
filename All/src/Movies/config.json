@@ -1,7 +1,0 @@
-﻿{
-	"Data": {
-		"DefaultConnection": {
-			"ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=MovieDb;Trusted_Connection=True;"
-		}
-	}
-}
