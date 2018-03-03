@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Movies.Services;
 using Newtonsoft.Json.Serialization;
 using static Microsoft.Azure.KeyVault.KeyVaultClient;
@@ -34,11 +35,26 @@ namespace Movies
             services
                 .AddMvc();
 
+            //services.AddSingleton(sp =>
+            //{
+            //    var tokenProvider = new AzureServiceTokenProvider();
+            //    var callback = new AuthenticationCallback(tokenProvider.KeyVaultTokenCallback);
+            //    return new KeyVaultClient(callback);
+            //});
             services.AddSingleton(sp =>
             {
-                var tokenProvider = new AzureServiceTokenProvider();
-                var callback = new AuthenticationCallback(tokenProvider.KeyVaultTokenCallback);
-                return new KeyVaultClient(callback);
+                AuthenticationCallback callback = async (authority,resource,scope) =>
+                {
+                    var appId = Configuration["AppId"];
+                    var appSecret = Configuration["AppSecret"];
+                    var authContext = new AuthenticationContext(authority);
+                    var credential = new ClientCredential(appId, appSecret);
+                    var authResult = await authContext.AcquireTokenAsync(resource, credential);
+                    return authResult.AccessToken;
+                };
+                
+                var client = new KeyVaultClient(callback);
+                return new KeyVaultCrypto(client, Configuration["KeyId"]);
             });
                 
         }
