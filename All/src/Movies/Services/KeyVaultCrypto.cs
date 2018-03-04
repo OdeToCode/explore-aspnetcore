@@ -19,7 +19,7 @@ namespace Movies.Services
         }
 
         public async Task<string> DecryptAsync(string encryptedText)
-        {
+        {   
             var encryptedBytes = Convert.FromBase64String(encryptedText);
             var decryptionResult = await client.DecryptAsync(keyId, JsonWebKeyEncryptionAlgorithm.RSAOAEP, encryptedBytes);
             var decryptedText = Encoding.Unicode.GetString(decryptionResult.Result);
