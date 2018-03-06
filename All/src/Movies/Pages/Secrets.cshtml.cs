@@ -26,6 +26,7 @@ namespace Movies.Pages
                 try
                 {
                     DecryptedText = await crypto.DecryptAsync(encryptedText);
+                    //DecryptedText = await crypto.DecryptAsync(encryptedText);
                 }
                 catch(Exception ex)
                 {
@@ -39,7 +40,8 @@ namespace Movies.Pages
             DecryptedText = word;
             if(word != null)
             {
-                EncryptedText = await crypto.EncryptAsync(word);
+                //EncryptedText = await crypto.EncryptAsync(word);
+                EncryptedText = await crypto.WrapKeyAsync(word);
             }
 
             return RedirectToPage(new { EncryptedText });

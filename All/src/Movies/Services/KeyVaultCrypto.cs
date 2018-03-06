@@ -18,6 +18,22 @@ namespace Movies.Services
             this.keyId = keyId;
         }
 
+        public async Task<string> UnwrapAsync(string encryptedKey)
+        {
+            var encryptedBytes = Convert.FromBase64String(encryptedKey);
+            var decryptionResult = await client.UnwrapKeyAsync(keyId, JsonWebKeyEncryptionAlgorithm.RSAOAEP, encryptedBytes);
+            var decryptedKey = Encoding.Unicode.GetString(decryptionResult.Result);
+            return decryptedKey;
+        }
+
+        public async Task<string> WrapKeyAsync(string key)
+        {
+            var keyAsBytes = Encoding.Unicode.GetBytes(key);
+            var wrapResult = await client.WrapKeyAsync(keyId, JsonWebKeyEncryptionAlgorithm.RSAOAEP, keyAsBytes);
+            var encodedText = Convert.ToBase64String(wrapResult.Result);
+            return encodedText;
+        }
+
         public async Task<string> DecryptAsync(string encryptedText)
         {   
             var encryptedBytes = Convert.FromBase64String(encryptedText);
@@ -33,10 +49,14 @@ namespace Movies.Services
 
             using (var rsa = new RSACryptoServiceProvider())
             {
-                var parameters = new RSAParameters() { Modulus = key.N, Exponent = key.E };
+          
+                var parameters = new RSAParameters()
+                {
+                    Modulus = key.N,
+                    Exponent = key.E
+                };
                 rsa.ImportParameters(parameters);
                 var byteData = Encoding.Unicode.GetBytes(value);
-
                 var encryptedText = rsa.Encrypt(byteData, true);
                 var encodedText = Convert.ToBase64String(encryptedText);
                 return encodedText;
