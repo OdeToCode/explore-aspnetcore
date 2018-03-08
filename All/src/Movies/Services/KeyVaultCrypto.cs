@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Movies.Services
 {
-    public class KeyVaultCrypto
+    public class KeyVaultCrypto : IKeyVaultCrypto
     {
         private readonly KeyVaultClient client;
         private readonly string keyId;
@@ -48,8 +48,7 @@ namespace Movies.Services
             var key = bundle.Key;
 
             using (var rsa = new RSACryptoServiceProvider())
-            {
-          
+            {          
                 var parameters = new RSAParameters()
                 {
                     Modulus = key.N,
@@ -57,7 +56,7 @@ namespace Movies.Services
                 };
                 rsa.ImportParameters(parameters);
                 var byteData = Encoding.Unicode.GetBytes(value);
-                var encryptedText = rsa.Encrypt(byteData, true);
+                var encryptedText = rsa.Encrypt(byteData, fOAEP: true);
                 var encodedText = Convert.ToBase64String(encryptedText);
                 return encodedText;
             }

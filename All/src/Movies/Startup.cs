@@ -37,7 +37,7 @@ namespace Movies
             //    var callback = new AuthenticationCallback(tokenProvider.KeyVaultTokenCallback);
             //    return new KeyVaultClient(callback);
             //});
-            services.AddSingleton(sp =>
+            services.AddSingleton<IKeyVaultCrypto>(sp =>
             {
                 AuthenticationCallback callback = async (authority,resource,scope) =>
                 {
