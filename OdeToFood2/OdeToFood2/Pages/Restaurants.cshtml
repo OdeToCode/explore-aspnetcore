@@ -1,0 +1,20 @@
+﻿@page
+@model OdeToFood2.Pages.RestaurantsModel
+@{
+    ViewData["Title"] = "Restaurants";
+}
+
+<h2>Restaurants</h2>
+
+@foreach(var restaurant in Model.Restaurants)
+{
+    <div class="card">
+        <div class="card-block">
+            <h3 class="card-title">@restaurant.Name</h3>
+            <div class="card-text">
+                <span>Location: @restaurant.Location</span>
+                <span>Cuisine: @restaurant.Cuisine</span>
+            </div>
+        </div>
+    </div>
+}
