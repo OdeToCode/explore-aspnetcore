@@ -7,5 +7,7 @@ namespace OdeToFood2.Data
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
         Restaurant GetRestaurantById(int id);
+        Restaurant Update(Restaurant restaurant);
+        Restaurant Add(Restaurant restaurant);
     }
 }

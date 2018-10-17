@@ -2,6 +2,7 @@
 {
     public enum CuisineType
     {
+        Unknown,
         Mexican,
         Italian,
         Indian

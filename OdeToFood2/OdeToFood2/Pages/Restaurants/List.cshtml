@@ -30,9 +30,14 @@
             <span>Cuisine: @restaurant.Cuisine</span>
         </div>
         <div class="panel-footer">
-            <a asp-page="/Restaurants/Detail" asp-route-restaurantId="@restaurant.Id">
+            <a class="btn btn-lg" asp-page="/Restaurants/Detail" asp-route-restaurantId="@restaurant.Id">
                 <i class="glyphicon glyphicon-zoom-in"></i>
+            </a>
+            <a class="btn btn-lg" asp-page="/Restaurants/Edit" asp-route-restaurantId="@restaurant.Id">
+                <i class="glyphicon glyphicon-edit"></i>
             </a>
         </div>
     </div>
 }
+
+<a asp-page="Edit" class="btn btn-default">Add New</a>
