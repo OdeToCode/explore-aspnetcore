@@ -1,28 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OdeToFood2.Core.Entities;
 using OdeToFood2.Data;
-using OdeToFood2.Entities;
 
 namespace OdeToFood2.Pages
 {
-    public class RestaurantsModel : PageModel
+    public class ListModel : PageModel
     {
         private readonly IRestaurantData restaurantData;
 
         public IEnumerable<Restaurant> Restaurants { get; set; }
 
-        public RestaurantsModel(IRestaurantData restaurantData)
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
+
+        public ListModel(IRestaurantData restaurantData)
         {
             this.restaurantData = restaurantData;
         }
 
         public void OnGet()
         {
-            Restaurants = restaurantData.GetAllRestaurants();
+            Restaurants = restaurantData.GetRestaurantsByName(SearchTerm);
         }
     }
 }

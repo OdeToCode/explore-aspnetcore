@@ -1,14 +1,9 @@
-﻿using OdeToFood2.Entities;
+﻿using OdeToFood2.Core.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace OdeToFood2.Data
 {
-    public interface IRestaurantData
-    {
-        IEnumerable<Restaurant> GetAllRestaurants();
-    }
-
     public class InMemoryRestaurantData : IRestaurantData
     {
         List<Restaurant> _restaurants;
@@ -23,9 +18,18 @@ namespace OdeToFood2.Data
             };
         }
 
-        public IEnumerable<Restaurant> GetAllRestaurants()
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name)
         {
-            return _restaurants.OrderBy(r => r.Name);
+            return
+                from r in _restaurants
+                where string.IsNullOrEmpty(name) || r.Name.StartsWith(name) 
+                orderby r.Name
+                select r;
+        }
+
+        public Restaurant GetRestaurantById(int id)
+        {
+            return _restaurants.FirstOrDefault(r => r.Id == id);
         }
     }
 }

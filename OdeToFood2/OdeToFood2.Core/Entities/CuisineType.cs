@@ -1,4 +1,4 @@
-﻿namespace OdeToFood2.Entities
+﻿namespace OdeToFood2.Core.Entities
 {
     public enum CuisineType
     {

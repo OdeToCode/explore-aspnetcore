@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OdeToFood2.Core\OdeToFood2.Core.csproj" />
+    <ProjectReference Include="..\OdeToFood2.Data\OdeToFood2.Data.csproj" />
+  </ItemGroup>
+
 </Project>
