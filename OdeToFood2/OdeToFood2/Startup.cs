@@ -49,6 +49,7 @@ namespace OdeToFood2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseNodeModules(env);
             }
             else
             {
@@ -56,7 +57,7 @@ namespace OdeToFood2
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            app.UseHttpsRedirection();            
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
