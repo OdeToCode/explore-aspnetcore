@@ -1,0 +1,15 @@
+﻿@page
+@model DeleteModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete!</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete @Model.Restaurant.Name?
+</div>
+<form method="post">
+    <input type="hidden" name="restaurantId" value="@Model.Restaurant.Id" />
+    <button class="btn btn-danger" type="submit">Yes!</button>
+    <a asp-page="List" class="btn btn-default">Back to List</a>
+</form>

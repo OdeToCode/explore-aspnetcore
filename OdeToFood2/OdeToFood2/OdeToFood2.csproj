@@ -14,4 +14,10 @@
     <ProjectReference Include="..\OdeToFood2.Data\OdeToFood2.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\Restaurants\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>
