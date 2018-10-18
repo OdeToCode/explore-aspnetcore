@@ -51,6 +51,7 @@ namespace OdeToFood2.Pages.Restaurants
                 {
                     Restaurant = restaurantData.Update(Restaurant);
                 }
+                restaurantData.Commit();
                 return RedirectToPage("Detail", new { restaurantId = Restaurant.Id });
             }
             return Page();

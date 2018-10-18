@@ -9,5 +9,7 @@ namespace OdeToFood2.Data
         Restaurant GetRestaurantById(int id);
         Restaurant Update(Restaurant restaurant);
         Restaurant Add(Restaurant restaurant);
+        Restaurant Delete(int id);
+        int Commit();
     }
 }
