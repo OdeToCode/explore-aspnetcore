@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +34,7 @@ namespace ProtectStatic
                     var claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.Name, "bob"));
 
-                    await ctx.Authentication.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                    await ctx.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme)));
 
                     await ctx.Response.WriteAsync("You are logged in! Go to <a href='/secret/secretpage.html'>Secret page</a>");
@@ -47,8 +48,6 @@ namespace ProtectStatic
                 PolicyName = "Authenticated"
             });
             app.UseStaticFiles();
-
-            
 
             app.Run(context =>
             {

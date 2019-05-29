@@ -12,19 +12,29 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WorkingMvc6
-{   
+{
+   
+
     public class Startup
     {        
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
             services
+                .AddAuthorization(options =>
+                {
+                    options.AddPolicy("IsLucky", builder =>
+                    {
+                        builder.RequireAssertion(c => DateTime.Now.Second % 2 == 0);
+                    });
+                })
                 .AddMvc(options =>
                 {
                     options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
 
-                    options.CacheProfiles.Add("Aggressive", new CacheProfile {Duration = 60});
+                    options.CacheProfiles.Add("Aggressive", new CacheProfile { Duration = 60 });
                 })
                 .AddJsonOptions(options =>
                 {
