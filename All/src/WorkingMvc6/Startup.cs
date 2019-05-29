@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
@@ -12,12 +11,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using System;
-using Microsoft.AspNetCore.Authorization;
 
 namespace WorkingMvc6
 {
-   
-
     public class Startup
     {        
         public void ConfigureServices(IServiceCollection services)
@@ -27,7 +23,8 @@ namespace WorkingMvc6
                 {
                     options.AddPolicy("IsLucky", builder =>
                     {
-                        builder.RequireAssertion(c => DateTime.Now.Second % 2 == 0);
+                        var random = new Random();
+                        builder.RequireAssertion(_ => random.Next(1,100) < 75);
                     });
                 })
                 .AddMvc(options =>
