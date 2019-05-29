@@ -28,7 +28,7 @@ namespace ProtectStatic
                                     httpContext.User, null, _policyName);
                 if (!authorized.Succeeded)
                 {
-                    await httpContext.Authentication.ChallengeAsync();
+                    await httpContext.ChallengeAsync();
                     return;
                 }
             }
