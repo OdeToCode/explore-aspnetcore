@@ -35,7 +35,7 @@ namespace TestInMemory
                 //
                 // This will replace DbContextOptions
                 //
-                //AddCoreServices<SomeDbContext>(services, (p, o) =>
+                //ReplaceCoreServices<SomeDbContext>(services, (p, o) =>
                 //{
                 //    o.UseInMemoryDatabase("DB");
                 //}, ServiceLifetime.Scoped);
@@ -43,15 +43,21 @@ namespace TestInMemory
             });
         }
 
-        private static void AddCoreServices<TContextImplementation>(IServiceCollection serviceCollection, Action<IServiceProvider, DbContextOptionsBuilder> optionsAction, ServiceLifetime optionsLifetime) where TContextImplementation : DbContext
+        private static void ReplaceCoreServices<TContextImplementation>(IServiceCollection serviceCollection, 
+                                                Action<IServiceProvider, DbContextOptionsBuilder> optionsAction, 
+                                                ServiceLifetime optionsLifetime) where TContextImplementation : DbContext
         {
-            serviceCollection.Add(new ServiceDescriptor(typeof(DbContextOptions<TContextImplementation>), (IServiceProvider p) => DbContextOptionsFactory<TContextImplementation>(p, optionsAction), optionsLifetime));
-            serviceCollection.Add(new ServiceDescriptor(typeof(DbContextOptions), (IServiceProvider p) => p.GetRequiredService<DbContextOptions<TContextImplementation>>(), optionsLifetime));
+            serviceCollection.Add(new ServiceDescriptor(typeof(DbContextOptions<TContextImplementation>), 
+                                  (IServiceProvider p) => DbContextOptionsFactory<TContextImplementation>(p, optionsAction), optionsLifetime));
+            serviceCollection.Add(new ServiceDescriptor(typeof(DbContextOptions), 
+                                  (IServiceProvider p) => p.GetRequiredService<DbContextOptions<TContextImplementation>>(), optionsLifetime));
         }
 
-        private static DbContextOptions<TContext> DbContextOptionsFactory<TContext>(IServiceProvider applicationServiceProvider, Action<IServiceProvider, DbContextOptionsBuilder> optionsAction) where TContext : DbContext
+        private static DbContextOptions<TContext> DbContextOptionsFactory<TContext>(IServiceProvider applicationServiceProvider, 
+                                                   Action<IServiceProvider, DbContextOptionsBuilder> optionsAction) where TContext : DbContext
         {
-            DbContextOptionsBuilder<TContext> dbContextOptionsBuilder = new DbContextOptionsBuilder<TContext>(new DbContextOptions<TContext>(new Dictionary<Type, IDbContextOptionsExtension>()));
+            DbContextOptionsBuilder<TContext> dbContextOptionsBuilder = new DbContextOptionsBuilder<TContext>(
+                new DbContextOptions<TContext>(new Dictionary<Type, IDbContextOptionsExtension>()));
             dbContextOptionsBuilder.UseApplicationServiceProvider(applicationServiceProvider);
             optionsAction?.Invoke(applicationServiceProvider, dbContextOptionsBuilder);
             return dbContextOptionsBuilder.Options;
