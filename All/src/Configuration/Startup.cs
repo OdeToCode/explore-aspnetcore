@@ -5,35 +5,24 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Configuration
 {
-
-
-
-
     public class Startup
     {
-        public Startup(IHostingEnvironment environment)
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuation)
         {
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(environment.WebRootPath)
-                   .AddJsonFile("config.json")
-                   .AddUserSecrets<Startup>()
-                   .AddEnvironmentVariables();
-
-            Configuration = builder.Build();
+            Configuration = configuation;
         }
-
-        public IConfiguration Configuration { get; set; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOptions();
-            //services.AddOptions<MessageConfiguration>(Configuration);
-            services.AddLogging();
-            services.AddScoped<ISecretNumber>(provider => new SecretNumber(Configuration));
+            services.Configure<MessageConfiguration>(Configuration);
+            services.AddSingleton<ISecretNumber, SecretNumber>();
         }
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDeveloperExceptionPage();
             app.UseMiddleware<GreetingMiddleware>();
         }
     }

@@ -1,6 +1,5 @@
 ﻿namespace Configuration
 {
-
     public class MessageConfiguration
     {
         public Messages Messages { get; set; }

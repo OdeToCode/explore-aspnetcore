@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 
@@ -18,8 +19,14 @@ namespace Configuration
             ISecretNumber secretNumber,
             IOptions<MessageConfiguration> configuration)
         {
-            await context.Response.WriteAsync(secretNumber.ComputeNumber().ToString());
+            if (configuration == null) throw new ArgumentNullException(nameof(configuration));
+            if (configuration.Value == null) throw new ArgumentException(nameof(configuration.Value));
+            if (configuration.Value.Messages == null) throw new ArgumentException(nameof(configuration.Value.Messages));
+            if (configuration.Value.Messages.Salutation == null) throw new ArgumentException(nameof(configuration.Value.Messages.Salutation));
+
             await context.Response.WriteAsync(configuration.Value.Messages.Salutation);
+            await context.Response.WriteAsync(Environment.NewLine);
+            await context.Response.WriteAsync(secretNumber.ComputeNumber().ToString());
         }
     }
 }
