@@ -21,15 +21,13 @@ namespace Movies
         public void ConfigureServices(IServiceCollection services)
         {
             services               
-                .AddEntityFrameworkSqlServer()
                 .AddDbContext<MovieDb>(options =>
                 {
                     var connection = Configuration["Data:DefaultConnection:ConnectionString"];
                     options.UseSqlServer(connection);
                 });
 
-            services
-                .AddMvc();
+            services.AddControllersWithViews();
 
             //services.AddSingleton(sp =>
             //{
@@ -57,8 +55,12 @@ namespace Movies
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseDeveloperExceptionPage();             
-            app.UseMvc();
+            app.UseDeveloperExceptionPage();
+            app.UseRouting();
+            app.UseEndpoints(e =>
+            {
+                e.MapControllers();
+            });
         }
     }
 }
