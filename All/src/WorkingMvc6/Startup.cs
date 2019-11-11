@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using System;
+using Microsoft.Extensions.Hosting;
 
 namespace WorkingMvc6
 {
@@ -29,13 +30,9 @@ namespace WorkingMvc6
                 })
                 .AddMvc(options =>
                 {
+                    options.EnableEndpointRouting = false;
                     options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
-
                     options.CacheProfiles.Add("Aggressive", new CacheProfile { Duration = 60 });
-                })
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 })
                 .AddViewOptions(options =>
                 {
@@ -54,9 +51,10 @@ namespace WorkingMvc6
             services.AddSingleton(services);
         }
         
-        public void Configure(IApplicationBuilder app, IApplicationLifetime lifetime, 
+        public void Configure(IApplicationBuilder app, 
+                              IHostApplicationLifetime lifetime, 
                               ILoggerFactory loggerFactory, 
-                              IHostingEnvironment env)
+                              IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {

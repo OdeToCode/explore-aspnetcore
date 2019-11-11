@@ -23,7 +23,7 @@ namespace ProtectStatic
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment host, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHost host, ILoggerFactory loggerFactory)
         {
             app.UseAuthentication();
 

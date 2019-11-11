@@ -7,9 +7,9 @@ namespace WorkingMvc6.TagHelpers
     [HtmlTargetElement("my-environment")]
     public class MyEnvironment : TagHelper
     {
-        private readonly IHostingEnvironment _env;
+        private readonly IWebHostEnvironment _env;
 
-        public MyEnvironment(IHostingEnvironment env)
+        public MyEnvironment(IWebHostEnvironment env)
         {
             _env = env;
         }

@@ -6,9 +6,9 @@ namespace WorkingMvc6.Components
 {
     public class EnvironmentViewComponent : ViewComponent
     {
-        private readonly IHostingEnvironment _environment;
+        private readonly IWebHostEnvironment _environment;
 
-        public EnvironmentViewComponent(IHostingEnvironment environment)
+        public EnvironmentViewComponent(IWebHostEnvironment environment)
         {
             _environment = environment;
         }

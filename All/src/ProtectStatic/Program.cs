@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace ProtectStatic
@@ -7,10 +7,9 @@ namespace ProtectStatic
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
+            var host = WebHost
+                .CreateDefaultBuilder()
+                .UseUrls("http://localhost:5000")
                 .UseStartup<Startup>()
                 .Build();
 
