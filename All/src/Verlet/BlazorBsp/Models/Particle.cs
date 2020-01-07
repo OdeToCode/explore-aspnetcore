@@ -1,15 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BlazorBsp.Models
 {
     public class Particle
     {
-        public int Width { get; } = 10;
-        public int Height { get; } = 10;
-        public int Left { get; protected set; } = 0;
-        public int Top { get; protected set; } = 0;
+        public Particle(int left, int top, int particleSize, bool visible = true)
+        {
+            Visible = visible;
+            Width = particleSize;
+            Height = particleSize;
+            Left = left;
+            Top = top;
+            constraints = new List<Constraint>();
+        }
+
+        public void AddConstraint(Constraint constraint)
+        {
+            constraints.Add(constraint);
+        }
+
+        public int Width { get; }
+        public bool Visible { get; }
+        public int Height { get; }
+        public int Left { get; protected set; } 
+        public int Top { get; protected set; }
+
+        private readonly List<Constraint> constraints;
     }
 }

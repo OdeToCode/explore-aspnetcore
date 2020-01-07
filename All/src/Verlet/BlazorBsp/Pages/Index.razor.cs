@@ -1,9 +1,7 @@
 ﻿using Blazor.Extensions;
 using Blazor.Extensions.Canvas.Canvas2D;
+using BlazorBsp.Models;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BlazorBsp.Pages
@@ -11,18 +9,24 @@ namespace BlazorBsp.Pages
     public class IndexComponent : ComponentBase
     {
 
-        protected Canvas2DContext _context;
-        protected BECanvasComponent _canvasReference;
+        protected Canvas2DContext context;
+        protected BECanvasComponent canvasReference;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            this._context = await this._canvasReference.CreateCanvas2DAsync();
-            await this._context.SetFillStyleAsync("green");
+            context = await canvasReference.CreateCanvas2DAsync();
 
-            await this._context.FillRectAsync(10, 100, 100, 100);
+            var options = new RopeOptions
+            {
+                Left = 612, 
+                Top = 1,
+                ParticleDistance = 2,
+                ParticleSize = 2,
+                NumParticles = 80
+            };
 
-            await this._context.SetFontAsync("48px serif");
-            await this._context.StrokeTextAsync("Hello Blazor!!!", 10, 100);
+            var rope = new Rope(options);
+            await rope.Draw(context);
         }
     }
 }
