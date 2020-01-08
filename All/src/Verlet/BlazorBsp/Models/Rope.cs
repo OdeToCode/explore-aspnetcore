@@ -8,30 +8,54 @@ namespace BlazorBsp.Models
 {
     public class Rope
     {
-        public Rope(RopeOptions options)
+        private readonly SceneOptions options;
+
+        public Rope(SceneOptions options)
         {
             Particles = new List<Particle>(capacity: options.NumParticles + 1);
 
             var left = options.Left;
             var top = options.Top;
             var anchor = new AnchorParticle(left, top, options.ParticleSize);
-            anchor.AddConstraint(new Constraint(anchor, options.ParticleDistance));
             Particles.Add(anchor);
 
             for(var i = 0; i < options.NumParticles; i++)
             {
-                left += options.ParticleSize * 2;
+                left += options.ParticleDistance;
                 var particle = new Particle(left, top, options.ParticleSize);
-                Particles.Add(particle);
                 particle.AddConstraint(new Constraint(Particles.Last(), options.ParticleDistance));
+                Particles.Add(particle);
+            }
+
+            this.options = options;
+        }
+
+        public void Verlet(Point totalForce)
+        {
+            foreach (var particle in Particles.Skip(1))
+            {
+                particle.Apply(totalForce);
+            }
+
+            for (var i = 0; i < options.Iterations; i++)
+            {
+                foreach (var particle in Particles.Skip(1))
+                {
+                    particle.SatisfyConstraints();
+                }
             }
         }
 
         public async Task Draw(Canvas2DContext context)
         {
-            foreach(var particle in Particles)
+            await context.ClearRectAsync(0, 0, 1024, 768);
+
+            foreach (var particle in Particles)
             {
-                await context.FillRectAsync(particle.Left, particle.Top, particle.Width, particle.Height);
+                await context.BeginPathAsync();
+                await context.ArcAsync(particle.Current.X, particle.Current.Y, particle.Radius, 0, Math.PI * 2);
+                await context.FillAsync();
+                await context.ClosePathAsync();
             }
         }
 
