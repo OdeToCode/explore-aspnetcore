@@ -47,10 +47,13 @@ namespace BlazorBsp.Models
                 dx = dx * distance;
                 dy = dy * distance;
 
-                Current.X += dx;
-                Current.Y += dy;
-                constraint.Tether.Current.X -= dx;
-                constraint.Tether.Current.Y -= dy;
+                Current.X -= dx;
+                Current.Y -= dy;
+                if (!(constraint.Tether is AnchorParticle))
+                {
+                    constraint.Tether.Current.X += dx;
+                    constraint.Tether.Current.Y += dy;
+                }
 
             }
         }

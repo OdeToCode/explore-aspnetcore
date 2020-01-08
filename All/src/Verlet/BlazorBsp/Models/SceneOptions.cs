@@ -11,5 +11,7 @@
         public Force Gravity { get; set; }
         public Force Wind { get; set; }
         public int Iterations { get; set; }
+        public long Width { get; set; }
+        public long Height { get; set; }
     }
 }

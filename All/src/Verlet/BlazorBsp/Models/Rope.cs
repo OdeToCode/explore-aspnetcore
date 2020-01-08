@@ -44,6 +44,14 @@ namespace BlazorBsp.Models
                     particle.SatisfyConstraints();
                 }
             }
+
+            foreach(var particle in Particles)
+            {
+                particle.Current.X = Math.Max(particle.Current.X, 0);
+                particle.Current.X = Math.Min(particle.Current.X, options.Width);
+                particle.Current.Y = Math.Max(particle.Current.Y, 0);
+                particle.Current.Y = Math.Min(particle.Current.Y, options.Height);
+            }
         }
 
         public async Task Draw(Canvas2DContext context)
