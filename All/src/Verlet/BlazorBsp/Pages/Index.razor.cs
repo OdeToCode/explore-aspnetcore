@@ -11,33 +11,47 @@ namespace BlazorBsp.Pages
     {
         protected Canvas2DContext context;
         protected BECanvasComponent canvasReference;
-        private Scene scene;
+        protected Scene scene;
+        protected SceneOptions options;
+
+        public IndexComponent()
+        {
+            options = new SceneOptions
+            {
+                ParticleDistance = 8,
+                ParticleSize = 4,
+                ParticleCount = 30,
+                UpdatePeriod = 10,
+                Iterations = 20,
+                Gravity = new Force { X = 0, Y = 1 },
+                Wind = new Force { X = 0, Y = 0 }
+            };
+        }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
+            options.Left = (int)canvasReference.Width / 2;
+            options.Top = 1;
+            options.Width = canvasReference.Width;
+            options.Height = canvasReference.Height;
             context = await canvasReference.CreateCanvas2DAsync();
-           
-            var options = new SceneOptions
-            {
-                Left = (int)canvasReference.Width / 2,
-                Top = 1,
-                ParticleDistance = 8,
-                ParticleSize = 4,
-                NumParticles = 30,
-                UpdatePeriod = 10,
-                Iterations = 20,
-                Gravity = new Force { X = -1.2, Y = 0 },
-                Wind = new Force { X = 0, Y = 0.9 },
-                Width = canvasReference.Width,
-                Height = canvasReference.Height
-            };
+        }
 
+        public void Start()
+        {
+            if(scene != null)
+            { 
+                scene.Dispose();
+            }
             scene = new Scene(options, context);
         }
 
         public void Dispose()
         {
-            scene.Dispose();
+            if (scene != null)
+            {
+                scene.Dispose();
+            }
         }
     }
 }

@@ -12,14 +12,14 @@ namespace BlazorBsp.Models
 
         public Rope(SceneOptions options)
         {
-            Particles = new List<Particle>(capacity: options.NumParticles + 1);
+            Particles = new List<Particle>(capacity: options.ParticleCount + 1);
 
             var left = options.Left;
             var top = options.Top;
             var anchor = new AnchorParticle(left, top, options.ParticleSize);
             Particles.Add(anchor);
 
-            for(var i = 0; i < options.NumParticles; i++)
+            for(var i = 0; i < options.ParticleCount; i++)
             {
                 left += options.ParticleDistance;
                 var particle = new Particle(left, top, options.ParticleSize);

@@ -1,5 +1,33 @@
 ﻿@page "/"
 @inherits IndexComponent
 
+<label>Distance</label>
+<input @bind="options.ParticleDistance" />
+
+<label>Size</label>
+<input @bind="options.ParticleSize" />
+
+<label>Number</label>
+<input @bind="options.ParticleCount" />
+
+<label>Period</label>
+<input @bind="options.UpdatePeriod" />
+
+<label>Iterations</label>
+<input @bind="options.Iterations" />
+
+<label>Gravity X</label>
+<input @bind="options.Gravity.X" />
+
+<label>Gravity Y</label>
+<input @bind="options.Gravity.Y" />
+
+<label>Wind X</label>
+<input @bind="options.Wind.X" />
+
+<label>Wind Y</label>
+<input @bind="options.Wind.Y" />
+
+<button @onclick="Start">Go</button>
 
 <BECanvas Width="1024" Height="800" @ref="canvasReference"></BECanvas>

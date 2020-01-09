@@ -5,7 +5,7 @@
         public int UpdatePeriod { get; set; }
         public int Left { get; set; }
         public int Top { get; set; }
-        public int NumParticles { get; set; }
+        public int ParticleCount { get; set; }
         public int ParticleSize { get; set; }
         public int ParticleDistance { get; set; }
         public Force Gravity { get; set; }
