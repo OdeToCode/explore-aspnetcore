@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "bootstrap": "3.3.7",
-    "jquery": "3.2.1",
+    "jquery": "3.4.1",
     "jquery-validation": "1.17.0",
     "jquery-validation-unobtrusive": "3.2.6"
   }
